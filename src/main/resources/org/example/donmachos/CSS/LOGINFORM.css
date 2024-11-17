@@ -1,0 +1,7 @@
+.container {
+    -fx-border-color: white;
+    -fx-border-width: 5;
+    -fx-border-style: solid;
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+}
