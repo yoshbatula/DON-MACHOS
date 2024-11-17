@@ -38,7 +38,7 @@
             </ImageView>
             <Button fx:id="forgotpassBTN" layoutX="231.0" layoutY="223.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Forgot Password?" />
             <Text fill="#90571c" layoutX="85.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Coffeelover?" />
-            <Button fx:id="createBTN" layoutX="177.0" layoutY="371.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Create Account" textFill="#90571c" />
+            <Button fx:id="createBTN" layoutX="177.0" layoutY="371.0" mnemonicParsing="false" onAction="#switchform" style="-fx-background-color: transparent;" text="Create Account" textFill="#90571c" />
             <Text layoutX="101.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please login to your account">
                <font>
                   <Font size="14.0" />
