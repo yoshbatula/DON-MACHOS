@@ -160,6 +160,7 @@ public class LoginController {
                 Stage stage = new Stage();
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HOMEINTERFACE.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
+                stage.setTitle("HOME INTERFACE");
                 stage.setScene(scene);
                 stage.show();
             }
