@@ -31,6 +31,9 @@ public class HOMECONTROLLER {
 
         if(event.getSource() == ordersBTN) {
 
+            Stage window = (Stage) ordersBTN.getScene().getWindow();
+            window.close();
+
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MENU.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -39,6 +42,10 @@ public class HOMECONTROLLER {
             stage.show();
 
         } else if(event.getSource() == ordernowBTN) {
+
+            Stage window = (Stage) ordersBTN.getScene().getWindow();
+            window.close();
+
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MENU.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -46,6 +53,6 @@ public class HOMECONTROLLER {
             stage.setScene(scene);
             stage.show();
 
-        } 
+        }
     }
 }

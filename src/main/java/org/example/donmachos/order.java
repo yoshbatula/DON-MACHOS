@@ -7,6 +7,7 @@ public class order {
     public int sugar;
     public int quantity;
 
+
     public order(int price, String mood, int sugar, int quantity) {
         this.price = price;
         this.mood = mood;
