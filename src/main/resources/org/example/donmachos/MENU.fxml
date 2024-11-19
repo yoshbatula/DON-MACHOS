@@ -583,7 +583,7 @@
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextArea fx:id="textBestSellerQuantity" layoutX="29.0" layoutY="232.0" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: transparent; -fx-background-radius: 60px;" text="  1" wrapText="true" />
+                              <TextArea fx:id="textBestSellerQuantity" layoutX="30.0" layoutY="232.0" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: transparent; -fx-background-radius: 60px;" text="  1" wrapText="true" />
                               <Button fx:id="minusBestSellerBTN" layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
                               <Button fx:id="plusBestSellerBTN" layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
                               <Button fx:id="addCARTBESTSELLER1" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
@@ -618,7 +618,7 @@
                               <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Button layoutX="14.0" layoutY="164.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;">
+                        <Button fx:id="dondarkoHOT" layoutX="14.0" layoutY="164.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -627,7 +627,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button layoutX="58.0" layoutY="164.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;">
+                        <Button fx:id="dondarkoICE" layoutX="58.0" layoutY="164.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -641,17 +641,17 @@
                               <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Label>
-                        <Button layoutX="119.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="S" textFill="#ff8000">
+                        <Button fx:id="dondarkoS" layoutX="119.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="S" textFill="#ff8000">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="160.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="M" textFill="#603000">
+                        <Button fx:id="dondarkoM" layoutX="160.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="M" textFill="#603000">
                            <font>
                               <Font name="Arial Bold" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="205.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="L" textFill="RED">
+                        <Button fx:id="dondarkoL" layoutX="205.0" layoutY="186.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="27.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="L" textFill="RED">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -676,9 +676,9 @@
                               <Font name="Arial Bold" size="14.0" />
                            </font>
                         </Label>
-                        <TextArea layoutX="9.0" layoutY="226.0" prefHeight="38.0" prefWidth="81.0" text="         1" wrapText="true" />
-                        <Button layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
-                        <Button layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
+                        <TextArea fx:id="dondarkoQuantity" layoutX="33.0" layoutY="233.0" prefHeight="26.0" prefWidth="17.0" text="  1" wrapText="true" />
+                        <Button fx:id="dondarkominus" layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
+                        <Button fx:id="dondarkoplus" layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
                         <Button fx:id="addCARTBESTSELLER2" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />

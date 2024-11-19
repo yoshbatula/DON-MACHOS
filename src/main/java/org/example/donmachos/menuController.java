@@ -71,6 +71,27 @@ public class menuController implements Initializable {
     private ScrollPane cartScrollPane;
 
     @FXML
+    private Button dondarkoHOT;
+
+    @FXML
+    private Button dondarkoICE;
+
+    @FXML
+    private Button dondarkoL;
+
+    @FXML
+    private Button dondarkoM;
+
+    @FXML
+    private Button dondarkoS;
+
+    @FXML
+    private Button dondarkominus;
+
+    @FXML
+    private Button dondarkoplus;
+
+    @FXML
     private Button hotBestSellerBTN;
 
     @FXML
@@ -94,6 +115,10 @@ public class menuController implements Initializable {
     @FXML
     private Text totalText;
 
+    @FXML
+    private TextArea dondarkoQuantity;
+
+
     private List<orderController> cartItems = new ArrayList<>();
 
     private String selectedMood = "Iced";
@@ -103,6 +128,16 @@ public class menuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        dondarkoHOT.setOnAction(this::selectMood);
+        dondarkoICE.setOnAction(this::selectMood);
+
+        dondarkoS.setOnAction(this::selectSize);
+        dondarkoM.setOnAction(this::selectSize);
+        dondarkoL.setOnAction(this::selectSize);
+
+        dondarkominus.setOnAction(this::adjustQuantity);
+        dondarkoplus.setOnAction(this::adjustQuantity);
 
         hotBestSellerBTN.setOnAction(this::selectMood);
         IceBestSellerBTN.setOnAction(this::selectMood);
@@ -115,6 +150,7 @@ public class menuController implements Initializable {
         plusBestSellerBTN.setOnAction(this::adjustQuantity);
 
         textBestSellerQuantity.setText(String.valueOf(quantity));
+        dondarkoQuantity.setText(String.valueOf(quantity));
 
         if (DonBarkoIMG.getImage() == null) {
             DonBarkoIMG.setImage(new Image(getClass().getResource("/images/9_4.png").toExternalForm()));
@@ -142,6 +178,10 @@ public class menuController implements Initializable {
             selectedMood = "Hot";
         } else if (sourceButton.equals(IceBestSellerBTN)) {
             selectedMood = "Iced";
+        } else if (sourceButton.equals(dondarkoHOT)) {
+            selectedMood = "Hot";
+        } else if (sourceButton.equals(dondarkoICE)) {
+            selectedMood = "Iced";
         }
 
         System.out.println("Selected Mood: " + selectedMood);
@@ -158,6 +198,15 @@ public class menuController implements Initializable {
         } else if (sourceButton.equals(LargeBestSellerBTN)) {
             selectedSize = "Large";
             price = 99.00;
+        } else if (sourceButton.equals(dondarkoS)) {
+            selectedSize = "Small";
+            price = 39.00;
+        } else if (sourceButton.equals(dondarkoM)) {
+            selectedSize = "Medium";
+            price = 69.00;
+        } else if (sourceButton.equals(dondarkoL)) {
+            selectedSize = "Large";
+            price = 99.00;
         }
 
         System.out.println("Selected Size: " + selectedSize);
@@ -172,8 +221,35 @@ public class menuController implements Initializable {
         } else if (sourceButton.equals(plusBestSellerBTN)) {
             quantity++;
             System.out.println("Plus button clicked: " + quantity);
+        } else if (sourceButton.equals(dondarkominus) && quantity > 1) {
+            quantity--;
+            System.out.println("Minus button clicked: " + quantity);
+        } else if (sourceButton.equals(dondarkoplus)) {
+            quantity ++;
+            System.out.println("Plus button clicked: " + quantity);
+        }
+
+        orderController selectedItem = null;
+        for (orderController item : cartItems) {
+
+            if (item.getCoffeename().equals("Don Darko")) {
+                selectedItem = item;
+                break;
+            }
+        }
+
+        if (selectedItem != null) {
+
+            if (sourceButton.equals(minusBestSellerBTN) && selectedItem.getQuantity() > 1) {
+                selectedItem.setQuantity(selectedItem.getQuantity() - 1);
+            } else if (sourceButton.equals(plusBestSellerBTN)) {
+                selectedItem.setQuantity(selectedItem.getQuantity() + 1);
+            }
+
+            updateCart();
         }
         textBestSellerQuantity.setText(String.valueOf(quantity));
+        dondarkoQuantity.setText(String.valueOf(quantity));
     }
 
     private void addToCart(ActionEvent event) {
@@ -192,6 +268,7 @@ public class menuController implements Initializable {
 
         if (item != null) {
             boolean found = false;
+
 
             for (orderController cartItem : cartItems) {
                 if (cartItem.getCoffeename().equals(item.getCoffeename()) &&
