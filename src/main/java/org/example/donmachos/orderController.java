@@ -7,14 +7,16 @@ public class orderController{
     private ImageView coffeImageView;
     private int quantity;
     private double price;
-    private String description;
+    private String size;
+    private String mood;
 
-    public orderController(String coffeename, ImageView coffeImageView, int quantity, double price, String description) {
+    public orderController(String coffeename, ImageView coffeImageView, int quantity, double price, String size, String mood) {
         this.coffeename = coffeename;
         this.coffeImageView = coffeImageView;
         this.quantity = quantity;
         this.price = price;
-        this.description = description;
+        this.size = size;
+        this.mood = mood;
     }
 
     public String getCoffeename() {
@@ -37,7 +39,15 @@ public class orderController{
         return price;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSize() {
+        return size;
+    }
+
+    public String getMood() {
+        return mood;
+    }
+
+    public void setMood(String mood) {
+        this.mood = mood;
     }
 }
