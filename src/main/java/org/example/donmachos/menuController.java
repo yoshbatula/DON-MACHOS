@@ -26,7 +26,10 @@ public class menuController implements Initializable {
     private ImageView DonMatchatos;
 
     @FXML
-    private ImageView IceBestSellerBTN;
+    private ImageView DonMatchatos1;
+
+    @FXML
+    private Button IceBestSellerBTN;
 
     @FXML
     private Button LargeBestSellerBTN;
@@ -35,16 +38,28 @@ public class menuController implements Initializable {
     private ImageView MatchaBerry;
 
     @FXML
+    private ImageView MatchaBerry1;
+
+    @FXML
     private Button addCARTBESTSELLER1;
 
     @FXML
     private Button addCARTBESTSELLER2;
 
     @FXML
+    private Button addCARTBESTSELLER21;
+
+    @FXML
     private Button addCARTBESTSELLER3;
 
     @FXML
+    private Button addCARTBESTSELLER31;
+
+    @FXML
     private Button addCARTBESTSELLER4;
+
+    @FXML
+    private Button addCARTBESTSELLER41;
 
     @FXML
     private ImageView caramelIMG;
@@ -56,7 +71,7 @@ public class menuController implements Initializable {
     private ScrollPane cartScrollPane;
 
     @FXML
-    private ImageView hotBestSellerBTN;
+    private Button hotBestSellerBTN;
 
     @FXML
     private Button mediumBestSellerBTN;
@@ -71,22 +86,35 @@ public class menuController implements Initializable {
     private Button smallBestSellerBTN;
 
     @FXML
+    private Text subtotaltext;
+
+    @FXML
     private TextArea textBestSellerQuantity;
+
+    @FXML
+    private Text totalText;
 
     private List<orderController> cartItems = new ArrayList<>();
 
     private String selectedMood = "Iced";
     private String selectedSize = "Small";
     private int quantity = 1;
+    private double price;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        hotBestSellerBTN.setOnAction(this::selectMood);
+        IceBestSellerBTN.setOnAction(this::selectMood);
 
-        addCARTBESTSELLER1.setId("addCARTBESTSELLER1");
-        addCARTBESTSELLER2.setId("addCARTBESTSELLER2");
-        addCARTBESTSELLER3.setId("addCARTBESTSELLER3");
-        addCARTBESTSELLER4.setId("addCARTBESTSELLER4");
+        smallBestSellerBTN.setOnAction(this::selectSize);
+        mediumBestSellerBTN.setOnAction(this::selectSize);
+        LargeBestSellerBTN.setOnAction(this::selectSize);
+
+        minusBestSellerBTN.setOnAction(this::adjustQuantity);
+        plusBestSellerBTN.setOnAction(this::adjustQuantity);
+
+        textBestSellerQuantity.setText(String.valueOf(quantity));
 
         if (DonBarkoIMG.getImage() == null) {
             DonBarkoIMG.setImage(new Image(getClass().getResource("/images/9_4.png").toExternalForm()));
@@ -108,18 +136,58 @@ public class menuController implements Initializable {
 
     }
 
+    private void selectMood(ActionEvent event) {
+        Button sourceButton = (Button) event.getSource();
+        if (sourceButton.equals(hotBestSellerBTN)) {
+            selectedMood = "Hot";
+        } else if (sourceButton.equals(IceBestSellerBTN)) {
+            selectedMood = "Iced";
+        }
+
+        System.out.println("Selected Mood: " + selectedMood);
+    }
+
+    private void selectSize(ActionEvent event) {
+        Button sourceButton = (Button) event.getSource();
+        if (sourceButton.equals(smallBestSellerBTN)) {
+            selectedSize = "Small";
+            price = 39.00;
+        } else if (sourceButton.equals(mediumBestSellerBTN)) {
+            selectedSize = "Medium";
+            price = 69.00;
+        } else if (sourceButton.equals(LargeBestSellerBTN)) {
+            selectedSize = "Large";
+            price = 99.00;
+        }
+
+        System.out.println("Selected Size: " + selectedSize);
+        System.out.println("Price: ₱" + price);
+    }
+
+    private void adjustQuantity(ActionEvent event) {
+        Button sourceButton = (Button) event.getSource();
+        if (sourceButton.equals(minusBestSellerBTN) && quantity > 1) {
+            quantity--;
+            System.out.println("Minus button clicked: " + quantity);
+        } else if (sourceButton.equals(plusBestSellerBTN)) {
+            quantity++;
+            System.out.println("Plus button clicked: " + quantity);
+        }
+        textBestSellerQuantity.setText(String.valueOf(quantity));
+    }
+
     private void addToCart(ActionEvent event) {
         Button sourceButton = (Button) event.getSource();
         orderController item = null;
 
         if (sourceButton.getId().equals("addCARTBESTSELLER2")) {
-            item = new orderController("Don Darko", DonBarkoIMG, 1, 39.00, selectedSize, selectedMood);
+            item = new orderController("Don Darko", DonBarkoIMG, quantity, price, selectedSize, selectedMood);
         } else if (sourceButton.getId().equals("addCARTBESTSELLER1")) {
-            item = new orderController("Caramel Macchiatos", caramelIMG, 1, 39.00, selectedSize, selectedMood);
+            item = new orderController("Caramel Macchiatos", caramelIMG, quantity, price, selectedSize, selectedMood);
         } else if (sourceButton.getId().equals("addCARTBESTSELLER3")) {
-            item = new orderController("Don Matchatos", DonMatchatos,1, 39.00, selectedSize, selectedMood);
+            item = new orderController("Don Matchatos", DonMatchatos, quantity, price, selectedSize, selectedMood);
         } else if (sourceButton.getId().equals("addCARTBESTSELLER4")) {
-            item = new orderController("Matcha Berry", MatchaBerry,1, 39.00, selectedSize, selectedMood);
+            item = new orderController("Matcha Berry", MatchaBerry, quantity, price, selectedSize, selectedMood);
         }
 
         if (item != null) {
@@ -129,7 +197,7 @@ public class menuController implements Initializable {
                 if (cartItem.getCoffeename().equals(item.getCoffeename()) &&
                         cartItem.getSize().equals(item.getSize()) &&
                         cartItem.getMood().equals(item.getMood())) {
-                    cartItem.setQuantity(cartItem.getQuantity() + 1);
+                    cartItem.setQuantity(cartItem.getQuantity() + item.getQuantity());
                     found = true;
                     break;
                 }
@@ -145,6 +213,8 @@ public class menuController implements Initializable {
 
     private void updateCart() {
         cartContent.getChildren().clear();
+
+        double subtotal = 0.0;
 
         for (orderController item : cartItems) {
             HBox cartRow = new HBox();
@@ -168,8 +238,13 @@ public class menuController implements Initializable {
             cartRow.getChildren().addAll(productImage, details, quantityPrice);
 
             cartContent.getChildren().add(cartRow);
+
+            subtotal += totalPrice;
         }
 
-    }
+        subtotaltext.setText("₱" + String.format("%.2f", subtotal));
+        totalText.setText("₱" + String.format("%.2f", subtotal));
 
+        javafx.application.Platform.runLater(() -> cartScrollPane.setVvalue(1.0));
+    }
 }
