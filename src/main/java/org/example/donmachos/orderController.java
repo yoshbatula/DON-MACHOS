@@ -1,16 +1,17 @@
 package org.example.donmachos;
 
-public class menuCONTAINER {
+import javafx.scene.image.ImageView;
 
+public class orderController{
     private String coffeename;
-    private String coffeIMG;
+    private ImageView coffeImageView;
     private int quantity;
     private double price;
     private String description;
 
-    public menuCONTAINER(String coffeename, String coffeIMG, int quantity, double price, String description) {
+    public orderController(String coffeename, ImageView coffeImageView, int quantity, double price, String description) {
         this.coffeename = coffeename;
-        this.coffeIMG = coffeIMG;
+        this.coffeImageView = coffeImageView;
         this.quantity = quantity;
         this.price = price;
         this.description = description;
@@ -20,16 +21,8 @@ public class menuCONTAINER {
         return coffeename;
     }
 
-    public void setCoffeename(String coffeename) {
-        this.coffeename = coffeename;
-    }
-
-    public String getCoffeIMG() {
-        return coffeIMG;
-    }
-
-    public void setCoffeIMG(String coffeIMG) {
-        this.coffeIMG = coffeIMG;
+    public ImageView getCoffeImageView() {
+        return coffeImageView;
     }
 
     public int getQuantity() {
@@ -44,15 +37,7 @@ public class menuCONTAINER {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

@@ -6,29 +6,32 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="67.0" prefWidth="293.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.MENUcontroller">
+<AnchorPane prefHeight="67.0" prefWidth="293.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.orderController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="4.0" prefHeight="58.0" prefWidth="51.0" style="-fx-background-color: #efefef; -fx-background-radius: 10px;">
+      <AnchorPane fx:id="imgContainer" layoutX="14.0" layoutY="4.0" prefHeight="58.0" prefWidth="51.0" style="-fx-background-color: #efefef; -fx-background-radius: 10px;">
          <children>
-            <ImageView fitHeight="58.0" fitWidth="66.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgView" fitHeight="58.0" fitWidth="66.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/9%204.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <Text layoutX="77.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DON MARKO">
+      <Text fx:id="CoffeName" layoutX="77.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DON MARKO">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>
       </Text>
-      <Text fill="#90571c" layoutX="77.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Small | Iced | 25%">
+      <Text fx:id="SizeMood" fill="#90571c" layoutX="77.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Small | Iced | 25%">
          <font>
             <Font name="Arial Black" size="6.0" />
          </font>
       </Text>
-      <Text layoutX="77.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x1" />
-      <Text layoutX="219.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱ 39.00">
+      <Text fx:id="quantity" layoutX="77.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x1">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Text fx:id="price" layoutX="219.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱ 39.00">
          <font>
             <Font name="Arial Black" size="12.0" />
          </font>

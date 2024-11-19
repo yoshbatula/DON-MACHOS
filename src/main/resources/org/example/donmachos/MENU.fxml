@@ -8,11 +8,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1080.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.MENUcontroller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1080.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.menuController">
     <children>
         <ScrollPane hbarPolicy="NEVER" layoutX="-13.0" prefHeight="1104.0" prefWidth="1096.0" vbarPolicy="NEVER">
             <content>
@@ -36,10 +37,10 @@
                            <children>
                               <ImageView fitHeight="133.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/9%201.png" />
+                                    <Image url="@images/9%203.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="126.0" layoutY="22.0" prefHeight="57.0" prefWidth="126.0" text="CARAMEL MACCHIATOS" textFill="#050505" wrapText="true">
+                              <Label layoutX="126.0" layoutY="22.0" prefHeight="57.0" prefWidth="126.0" text="DON MATCHATOS" textFill="#050505" wrapText="true">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -49,7 +50,7 @@
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="126.0" layoutY="79.0" prefHeight="39.0" prefWidth="126.0" text="Chilled milk, espresso, and caramel syrup." textFill="#929292" wrapText="true" />
+                              <Label layoutX="126.0" layoutY="79.0" prefHeight="39.0" prefWidth="146.0" text="Pure matcha from Japan, chilled milk, matcha syrup" textFill="#929292" wrapText="true" />
                               <Label layoutX="22.0" layoutY="134.0" prefHeight="38.0" prefWidth="45.0" text="MOOD" textFill="#050505" wrapText="true">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
@@ -113,10 +114,10 @@
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextArea layoutX="9.0" layoutY="226.0" prefHeight="38.0" prefWidth="81.0" text="         1" wrapText="true" />
+                              <TextArea layoutX="9.0" layoutY="226.0" prefHeight="23.0" prefWidth="82.0" text="         1" wrapText="true" />
                               <Button layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
                               <Button layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
-                              <Button layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
+                              <Button fx:id="addCARTBESTSELLER3" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
@@ -127,10 +128,10 @@
                            <children>
                               <ImageView fitHeight="133.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@images/9%204.png" />
+                                    <Image url="@images/10%201.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="126.0" layoutY="22.0" prefHeight="57.0" prefWidth="126.0" text="CARAMEL MACCHIATOS" textFill="#050505" wrapText="true">
+                              <Label layoutX="126.0" layoutY="22.0" prefHeight="57.0" prefWidth="126.0" text="MATCHA BERRY" textFill="#050505" wrapText="true">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
@@ -140,7 +141,7 @@
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="126.0" layoutY="79.0" prefHeight="39.0" prefWidth="126.0" text="Chilled milk, espresso, and caramel syrup." textFill="#929292" wrapText="true" />
+                              <Label layoutX="126.0" layoutY="79.0" prefHeight="39.0" prefWidth="149.0" text="Matcha, strawberry extract syrup, chilled milk" textFill="#929292" wrapText="true" />
                               <Label layoutX="22.0" layoutY="134.0" prefHeight="38.0" prefWidth="45.0" text="MOOD" textFill="#050505" wrapText="true">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
@@ -207,7 +208,7 @@
                               <TextArea layoutX="9.0" layoutY="226.0" prefHeight="38.0" prefWidth="81.0" text="         1" wrapText="true" />
                               <Button layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
                               <Button layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
-                              <Button layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
+                              <Button fx:id="addCARTBESTSELLER4" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
@@ -259,24 +260,30 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="684.0" layoutY="224.0" prefHeight="385.0" prefWidth="437.0">
+                  <AnchorPane layoutX="684.0" layoutY="224.0" prefHeight="325.0" prefWidth="319.0">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="1.0" pannable="true" prefHeight="393.0" prefWidth="331.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="145.0" prefWidth="217.0">
-                                 <children>
-                                    <AnchorPane layoutX="1.0" prefHeight="391.0" prefWidth="325.0" style="-fx-border-color: black; -fx-border-radius: 20px;" />
-                                 </children>
-                              </AnchorPane>
-                          </content>
+                        <ScrollPane fx:id="cartScrollPane" hbarPolicy="NEVER" layoutX="5.0" layoutY="39.0" pannable="true" prefHeight="188.0" prefWidth="316.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                           <content>
+                              <VBox fx:id="cartContent" prefHeight="200.0" prefWidth="317.0" />
+                           </content>
                         </ScrollPane>
+                        <AnchorPane prefHeight="398.0" prefWidth="326.0" style="-fx-border-color: black; -fx-border-radius: 20px;">
+                           <children>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="145.0" prefWidth="217.0" />
+                              <Label layoutX="25.0" layoutY="7.0" prefHeight="38.0" prefWidth="101.0" text="MY CART" textFill="#050505" wrapText="true">
+                                 <font>
+                                    <Font name="Arial Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="27.0" layoutY="355.0" prefHeight="288.0" prefWidth="279.0">
                      <children>
                         <AnchorPane layoutY="7.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-radius: 20px; -fx-background-color: #efefef;">
                            <children>
-                              <ImageView fitHeight="133.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="caramelIMG" fitHeight="133.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@images/9%201.png" />
                                  </image>
@@ -356,7 +363,7 @@
                               <TextArea layoutX="9.0" layoutY="226.0" prefHeight="38.0" prefWidth="81.0" text="         1" wrapText="true" />
                               <Button layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
                               <Button layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
-                              <Button layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
+                              <Button fx:id="addCARTBESTSELLER1" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
@@ -367,12 +374,12 @@
                   </AnchorPane>
                   <AnchorPane layoutX="325.0" layoutY="361.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-radius: 20px; -fx-background-color: #efefef;">
                      <children>
-                        <ImageView fitHeight="133.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="DonBarkoIMG" fitHeight="133.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/9%204.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="126.0" layoutY="22.0" prefHeight="57.0" prefWidth="126.0" text="CARAMEL MACCHIATOS" textFill="#050505" wrapText="true">
+                        <Label layoutX="126.0" layoutY="22.0" prefHeight="57.0" prefWidth="74.0" text="DON DARKO" textFill="#050505" wrapText="true">
                            <font>
                               <Font name="Arial Bold" size="18.0" />
                            </font>
@@ -382,7 +389,7 @@
                               <Font name="Arial Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="126.0" layoutY="79.0" prefHeight="39.0" prefWidth="126.0" text="Chilled milk, espresso, and caramel syrup." textFill="#929292" wrapText="true" />
+                        <Label layoutX="126.0" layoutY="79.0" prefHeight="39.0" prefWidth="126.0" text="High-quality dark chocolate, chocolate syrup" textFill="#929292" wrapText="true" />
                         <Label layoutX="22.0" layoutY="134.0" prefHeight="38.0" prefWidth="45.0" text="MOOD" textFill="#050505" wrapText="true">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
@@ -449,7 +456,7 @@
                         <TextArea layoutX="9.0" layoutY="226.0" prefHeight="38.0" prefWidth="81.0" text="         1" wrapText="true" />
                         <Button layoutX="11.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="-" />
                         <Button layoutX="64.0" layoutY="232.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 60px; -fx-background-color: D9D9D9;" text="+" wrapText="true" />
-                        <Button layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
+                        <Button fx:id="addCARTBESTSELLER2" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="Add to Cart" textFill="WHITE">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font>

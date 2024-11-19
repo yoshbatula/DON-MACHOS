@@ -6,6 +6,7 @@ module org.example.donmachos {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires java.sql;
+    requires java.desktop;
 
     opens org.example.donmachos to javafx.fxml;
     exports org.example.donmachos;
