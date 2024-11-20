@@ -52,6 +52,9 @@ public class LoginController {
     @FXML
     private Button signBTN;
 
+    @FXML
+    private Button signIN;
+
     private User user;
 
     public void register(ActionEvent event) throws SQLException {
@@ -129,6 +132,18 @@ public class LoginController {
             Stage stage = new Stage();
             FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("REGISTER.fxml"));
             Scene scene = new Scene(fxmlloader.load());
+            stage.setScene(scene);
+            stage.show();
+
+        } else if (event.getSource() == signIN) {
+
+            Stage window = (Stage) signIN.getScene().getWindow();
+            window.close();
+
+            Stage stage = new Stage();
+            FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("LOGIN.fxml"));
+            Scene scene = new Scene(fxmlloader.load());
+            stage.setTitle("LOGIN INTERFACE");
             stage.setScene(scene);
             stage.show();
         }

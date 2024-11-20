@@ -2,7 +2,9 @@ package org.example.donmachos;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
@@ -11,7 +13,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -116,6 +120,9 @@ public class menuController implements Initializable {
     private Text totalText;
 
     @FXML
+    private Button homeBTN;
+
+    @FXML
     private TextArea dondarkoQuantity;
 
 
@@ -124,6 +131,7 @@ public class menuController implements Initializable {
     private String selectedMood = "Iced";
     private String selectedSize = "Small";
     private int quantity = 1;
+    private int quantity1= 1;
     private double price;
 
     @Override
@@ -221,12 +229,12 @@ public class menuController implements Initializable {
         } else if (sourceButton.equals(plusBestSellerBTN)) {
             quantity++;
             System.out.println("Plus button clicked: " + quantity);
-        } else if (sourceButton.equals(dondarkominus) && quantity > 1) {
-            quantity--;
-            System.out.println("Minus button clicked: " + quantity);
+        } else if (sourceButton.equals(dondarkominus) && quantity1 > 1) {
+            quantity1--;
+            System.out.println("Minus button clicked: " + quantity1);
         } else if (sourceButton.equals(dondarkoplus)) {
-            quantity ++;
-            System.out.println("Plus button clicked: " + quantity);
+            quantity1++;
+            System.out.println("Plus button clicked: " + quantity1);
         }
 
         orderController selectedItem = null;
@@ -249,7 +257,7 @@ public class menuController implements Initializable {
             updateCart();
         }
         textBestSellerQuantity.setText(String.valueOf(quantity));
-        dondarkoQuantity.setText(String.valueOf(quantity));
+        dondarkoQuantity.setText(String.valueOf(quantity1));
     }
 
     private void addToCart(ActionEvent event) {
@@ -323,5 +331,21 @@ public class menuController implements Initializable {
         totalText.setText("₱" + String.format("%.2f", subtotal));
 
         javafx.application.Platform.runLater(() -> cartScrollPane.setVvalue(1.0));
+    }
+
+    public void switchform(ActionEvent event) throws IOException {
+
+        if (event.getSource() == homeBTN) {
+
+            Stage window = (Stage) homeBTN.getScene().getWindow();
+            window.close();
+
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HOMEINTERFACE.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("HOME INTERFACE");
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 }

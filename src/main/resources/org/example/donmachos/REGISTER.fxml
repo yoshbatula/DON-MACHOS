@@ -1,32 +1,235 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="405.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.LoginController">
    <children>
-      <AnchorPane prefHeight="425.0" prefWidth="377.0">
+      <AnchorPane layoutX="1.0" layoutY="-5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1080.0" style="-fx-background-color: transparent;">
          <children>
-            <TextField fx:id="EmailTF" layoutX="39.0" layoutY="111.0" prefHeight="25.0" prefWidth="255.0" style="-fx-background-radius: 10px;" />
-            <Text fill="#90571c" layoutX="73.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRATION FORM">
+            <ScrollPane hbarPolicy="NEVER" layoutX="-13.0" prefHeight="687.0" prefWidth="1096.0" vbarPolicy="NEVER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1810.0" prefWidth="1097.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="686.0" stroke="WHITE" strokeType="INSIDE" width="1094.0" />
+                        <Label layoutX="205.0" layoutY="219.0" prefHeight="38.0" prefWidth="342.0" text="WELCOME TO DON MACHOS" textFill="#050505" wrapText="true">
+                           <font>
+                              <Font name="Arial Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="712.0" fitWidth="1179.0" layoutX="-87.0" layoutY="153.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/SPLASH.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="433.0" fitWidth="613.0" layoutX="593.0" layoutY="206.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/16-169744_coffee-png.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="51.0" layoutY="257.0" prefHeight="134.0" prefWidth="664.0" text="Your Cup of " textFill="#050505" wrapText="true">
+                           <font>
+                              <Font name="Arial Black" size="90.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="56.0" layoutY="348.0" prefHeight="110.0" prefWidth="516.0" text="Happiness" textFill="#050505" wrapText="true">
+                           <font>
+                              <Font name="Arial Black" size="90.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="66.0" layoutY="493.0" prefHeight="63.0" prefWidth="453.0" text="THE PERFECT CUP, THE PERFECT VIBE" textFill="#050505" wrapText="true">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="517.0" prefHeight="63.0" prefWidth="453.0" text="COME EXPERIENCE THE DON MACHOS COMMUNITY" textFill="#050505" wrapText="true">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="419.0" layoutX="678.0" layoutY="224.0" opacity="0.6" stroke="#000000b7" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="357.0" />
+                        <AnchorPane layoutX="666.0" layoutY="187.0" prefHeight="433.0" prefWidth="379.0" style="-fx-background-color: transparent; -fx-background-radius: 20px;">
+                           <children>
+                              <Text layoutX="96.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <Line endX="59.5" endY="4.5" layoutX="107.0" layoutY="357.0" startX="-31.5" startY="4.5" />
+                              <Line endX="51.5" endY="4.5" layoutX="261.0" layoutY="357.0" startX="-50.0" startY="4.5" />
+                              <Text layoutX="180.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+                              <RadioButton fx:id="rememberRBTN" layoutX="40.0" layoutY="279.0" mnemonicParsing="false" text="Remember me" />
+                              <Text fill="#90571c" layoutX="77.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ACCOUNT">
+                                 <font>
+                                    <Font name="Palatino Linotype" size="24.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="forgotpassBTN" layoutX="231.0" layoutY="274.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Forgot Password?" />
+                              <Text fill="#90571c" layoutX="91.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?" />
+                              <Button fx:id="signIN" layoutX="227.0" layoutY="401.0" mnemonicParsing="false" onAction="#switchform" style="-fx-background-color: transparent;" text="Sign in" textFill="#90571c" />
+                              <Text layoutX="126.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please create your account">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Text>
+                              <Circle fill="WHITE" layoutX="191.0" layoutY="64.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+                              <TextField fx:id="EmailTF" layoutX="38.0" layoutY="169.0" prefHeight="26.0" prefWidth="302.0" promptText="Email Address" style="-fx-background-radius: 10px;" />
+                              <TextField fx:id="userTF" layoutX="39.0" layoutY="210.0" prefHeight="26.0" prefWidth="301.0" promptText="Username" style="-fx-background-radius: 10px;" />
+                              <PasswordField fx:id="passwordPF" layoutX="41.0" layoutY="249.0" prefHeight="26.0" prefWidth="297.0" promptText="Password" style="-fx-background-radius: 10px;" />
+                              <Button fx:id="submitBTN" layoutX="43.0" layoutY="307.0" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="SUBMIT" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Button layoutX="68.0" layoutY="581.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="156.0" style="-fx-background-color: #90571C; -fx-background-radius: 5;" text="READ MORE" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="15.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="4.0" layoutY="686.0" prefHeight="1101.0" prefWidth="1090.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1d6c6" height="1110.0" layoutX="2.0" layoutY="-6.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1092.0" />
+                              <Label layoutX="48.0" layoutY="34.0" prefHeight="106.0" prefWidth="421.0" text="Comes in Different ">
+                                 <font>
+                                    <Font name="Arial Black" size="39.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="49.0" layoutY="85.0" prefHeight="106.0" prefWidth="421.0" text="Flavors Now!">
+                                 <font>
+                                    <Font name="Arial Black" size="39.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="397.0" fitWidth="516.0" layoutX="34.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/428666291_924424712712954_4482483153087513672_n%201.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="259.0" fitWidth="501.0" layoutX="556.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/donmac39%201.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="548.0" layoutY="434.0" prefHeight="22.0" prefWidth="401.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="175.0" prefHeight="86.0" prefWidth="486.0" text="What started as a humble venture, offering iced caramel Macchiatos for an astonishingly low price of P39 has now blossomed into a beacon of innovation in the coffee scene.  " textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="566.0" layoutY="523.0" prefHeight="61.0" prefWidth="422.0" text="How it Started?">
+                                 <font>
+                                    <Font name="Arial Black" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="50.0" layoutY="252.0" prefHeight="94.0" prefWidth="465.0" text="Don Macchiatos’ newest variants echo its founding ethos: to make premium coffee an everyday luxury." textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="566.0" layoutY="396.0" lineSpacing="4.0" prefHeight="166.0" prefWidth="481.0" text="Don Macchiatos is originally owned by Nickie San Juan and Ariel Alegado from Pinamungahan, Cebu. Started in October 2022, with the main product offering Iced Caramel Macchiato." textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="566.0" layoutY="585.0" lineSpacing="4.0" prefHeight="166.0" prefWidth="481.0" text="The couple's drive for success led them to seek out new opportunities. One of the owners found a love for coffee during her pregnancy, and her partner shared the same passion. They realized they were spending a lot on coffee from other brands and decided to create their own. Hence, Don Macchiatos was born. They started their coffee training and had discovered affordable suppliers. It’s called Don Macchiatos because their main product offering is Iced Caramel Macchiato." textAlignment="JUSTIFY" wrapText="true">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="572.0" layoutY="375.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="131.0" style="-fx-background-color: #90571C; -fx-background-radius: 5;" text="ABOUT US" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Black" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="114.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="1083.0" />
+            <Label layoutX="111.0" layoutY="24.0" prefHeight="37.0" prefWidth="70.0" text="DON " textFill="WHITE" wrapText="true">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Arial Black" size="22.0" />
                </font>
-            </Text>
-            <Text layoutX="41.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-            <TextField fx:id="userTF" layoutX="40.0" layoutY="161.0" prefHeight="25.0" prefWidth="255.0" style="-fx-background-radius: 10px;" />
-            <Text layoutX="40.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address" />
-            <Text layoutX="42.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <Button fx:id="submitBTN" layoutX="148.0" layoutY="291.0" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="SUBMIT" textFill="WHITE">
+            </Label>
+            <Label layoutX="111.0" layoutY="50.0" prefHeight="38.0" prefWidth="126.0" text="MACHOS" textFill="WHITE" wrapText="true">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Black" size="22.0" />
                </font>
-            </Button>
-            <PasswordField fx:id="passwordPF" layoutX="40.0" layoutY="213.0" prefHeight="25.0" prefWidth="255.0" style="-fx-background-radius: 10px;" />
-         </children></AnchorPane>
+            </Label>
+            <Circle fill="WHITE" layoutX="66.0" layoutY="57.0" radius="35.0" stroke="WHITE" strokeType="INSIDE" />
+            <Label layoutX="322.0" layoutY="38.0" prefHeight="38.0" prefWidth="175.0" text="09123456789" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="11.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="284.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label layoutX="490.0" layoutY="38.0" prefHeight="38.0" prefWidth="254.0" text="DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="452.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Label layoutX="701.0" layoutY="38.0" prefHeight="38.0" prefWidth="254.0" text="DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="663.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="904.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="951.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="57.0" layoutX="-7.0" layoutY="113.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1087.0" />
+            <Label layoutX="50.0" layoutY="124.0" prefHeight="38.0" prefWidth="126.0" text="LOGIN" textFill="#90571c" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="455.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/location-pin.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="899.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/instagram.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="953.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/facebook.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="997.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/youtube.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="995.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+            <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="997.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/youtube.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="81.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo%20don%20machos%201.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
