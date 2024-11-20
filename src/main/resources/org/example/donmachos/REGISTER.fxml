@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -66,13 +65,11 @@
                               <Line endX="59.5" endY="4.5" layoutX="107.0" layoutY="357.0" startX="-31.5" startY="4.5" />
                               <Line endX="51.5" endY="4.5" layoutX="261.0" layoutY="357.0" startX="-50.0" startY="4.5" />
                               <Text layoutX="180.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
-                              <RadioButton fx:id="rememberRBTN" layoutX="40.0" layoutY="279.0" mnemonicParsing="false" text="Remember me" />
                               <Text fill="#90571c" layoutX="77.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ACCOUNT">
                                  <font>
                                     <Font name="Palatino Linotype" size="24.0" />
                                  </font>
                               </Text>
-                              <Button fx:id="forgotpassBTN" layoutX="231.0" layoutY="274.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Forgot Password?" />
                               <Text fill="#90571c" layoutX="91.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?" />
                               <Button fx:id="signIN" layoutX="227.0" layoutY="401.0" mnemonicParsing="false" onAction="#switchform" style="-fx-background-color: transparent;" text="Sign in" textFill="#90571c" />
                               <Text layoutX="126.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please create your account">
@@ -86,7 +83,7 @@
                               <PasswordField fx:id="passwordPF" layoutX="41.0" layoutY="249.0" prefHeight="26.0" prefWidth="297.0" promptText="Password" style="-fx-background-radius: 10px;" />
                               <Button fx:id="submitBTN" layoutX="43.0" layoutY="307.0" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="296.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="SUBMIT" textFill="WHITE">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font name="Arial Black" size="14.0" />
                                  </font>
                               </Button>
                            </children>
@@ -193,7 +190,7 @@
             <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="904.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
             <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="951.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="57.0" layoutX="-7.0" layoutY="113.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1087.0" />
-            <Label layoutX="50.0" layoutY="124.0" prefHeight="38.0" prefWidth="126.0" text="LOGIN" textFill="#90571c" wrapText="true">
+            <Label layoutX="50.0" layoutY="124.0" prefHeight="38.0" prefWidth="149.0" text="CREATE ACCOUNT" textFill="#90571c" wrapText="true">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
