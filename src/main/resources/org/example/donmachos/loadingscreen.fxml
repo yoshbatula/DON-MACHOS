@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="539.0" prefWidth="595.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.loadingcont">
+   <children>
+      <AnchorPane layoutX="64.0" layoutY="5.0" prefHeight="534.0" prefWidth="615.0">
+         <children>
+            <Text layoutX="163.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOADINGGG.........">
+               <font>
+                  <Font name="Arial Bold" size="22.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="99.0" fitWidth="149.0" layoutX="211.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo%20don%20machos%201.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
