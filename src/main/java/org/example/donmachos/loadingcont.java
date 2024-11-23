@@ -35,7 +35,7 @@ public class loadingcont implements Initializable {
 
         FadeTransition fade = new FadeTransition();
         fade.setNode(loadingText);
-        fade.setDuration(Duration.millis(1500));
+        fade.setDuration(Duration.millis(1400));
         fade.setCycleCount(TranslateTransition.INDEFINITE);
         fade.setAutoReverse(true);
         fade.setInterpolator(Interpolator.LINEAR);
