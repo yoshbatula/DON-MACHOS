@@ -10,10 +10,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -31,24 +28,24 @@ public class orderCont implements Initializable {
         int column = 0;
         int row = 0;
         for (int i = 0; i < carlist.size(); i++) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("orderContainer.fxml"));
             try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("orderContainer.fxml"));
                 AnchorPane pane = fxmlLoader.load();
+
 
                 menuOrderCONT ordercont = fxmlLoader.getController();
                 ordercont.setData(carlist.get(i));
-
 
                 if (column == 2) {
                     column = 0;
                     row++;
                 }
                 grid.add(pane, column++, row);
-                GridPane.setMargin(pane, new Insets(10));
 
+                GridPane.setMargin(pane, new Insets(15));
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
     }

@@ -27,12 +27,11 @@ public class menuOrderCONT {
     private cart cartlist;
 
     public void setData(cart carts) {
-        this.cartlist = new cart();
+        this.cartlist = carts;
         Image image = new Image(getClass().getResourceAsStream(cartlist.getImage()));
         imgView.setImage(image);
         COFFENAME.setText(cartlist.getCoffeName());
         COFFEDESCRIPTION.setText(cartlist.getCoffeDescription());
-
     }
 
 }
