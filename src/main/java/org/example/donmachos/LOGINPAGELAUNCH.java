@@ -12,9 +12,8 @@ import java.io.IOException;
 public class LOGINPAGELAUNCH extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LOGINPAGELAUNCH.class.getResource("loadingscreen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LOGINPAGELAUNCH.class.getResource("MENU.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.show();
     }

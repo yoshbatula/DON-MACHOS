@@ -7,6 +7,15 @@ public class cart {
     private String image;
     private String CoffeName;
     private String CoffeDescription;
+    private boolean bestSeller;
+
+    public boolean isBestSeller() {
+        return bestSeller;
+    }
+
+    public void setBestSeller(boolean bestSeller) {
+        this.bestSeller = bestSeller;
+    }
 
     public String getImage() {
         return image;

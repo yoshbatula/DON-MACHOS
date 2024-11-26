@@ -8,59 +8,95 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="320.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.menuOrderCONT"
-            style="-fx-background-color: #ffffff; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);">
+<AnchorPane prefHeight="311.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.menuOrderCONT">
    <children>
-      <!-- Image Section -->
-      <ImageView fx:id="imgView" fitHeight="120.0" fitWidth="120.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/9%201.png" />
-         </image>
-      </ImageView>
-
-      <!-- Coffee Name -->
-      <Text fx:id="COFFENAME" layoutX="150.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARAMEL MACCHIATOS" wrappingWidth="100.0" style="-fx-font-size: 16px; -fx-font-family: 'Arial Black';" />
-
-      <!-- Description -->
-      <Text fx:id="COFFEDESCRIPTION" fill="#929292" layoutX="150.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chilled milk, espresso, and caramel syrup." wrappingWidth="100.0" style="-fx-font-size: 12px;" />
-
-      <!-- Price -->
-      <Text fx:id="mainPrice" layoutX="20.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱39" style="-fx-font-size: 14px; -fx-font-family: 'Arial Black';" />
-
-      <!-- Mood Buttons -->
-      <Text layoutX="20.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MOOD" style="-fx-font-size: 12px; -fx-font-family: 'Arial Black';" />
-      <Button layoutX="70.0" layoutY="180.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 50px;">
-         <graphic>
-            <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane fx:id="imgContainer" layoutX="-2.0" prefHeight="311.0" prefWidth="265.0" style="-fx-background-color: #efefef; -fx-background-radius: 10px;">
+         <children>
+            <ImageView fx:id="imgView" fitHeight="117.0" fitWidth="97.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/fire%201.png" />
+                  <Image url="@images/9%201.png" />
                </image>
             </ImageView>
-         </graphic>
-      </Button>
-      <Button layoutX="100.0" layoutY="180.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 50px;">
-         <graphic>
-            <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/snowflake%201.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-
-      <!-- Size Section -->
-      <Text fx:id="SIZE" layoutX="20.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIZE" style="-fx-font-size: 12px; -fx-font-family: 'Arial Black';" />
-      <Button layoutX="70.0" layoutY="210.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 50px;" text="S" textFill="#ff8000" />
-      <Button layoutX="110.0" layoutY="210.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 50px;" text="M" textFill="#603000" />
-      <Button layoutX="150.0" layoutY="210.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0" style="-fx-background-color: #d9d9d9; -fx-background-radius: 50px;" text="L" textFill="red" />
-
-      <!-- Quantity Section -->
-      <Text layoutX="20.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTITY" style="-fx-font-size: 12px; -fx-font-family: 'Arial Black';" />
-      <Button layoutX="100.0" layoutY="240.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="34.0" text="+" />
-      <TextArea editable="false" layoutX="70.0" layoutY="240.0" prefHeight="24.0" prefWidth="30.0" text="1" wrapText="true" />
-      <Button layoutX="40.0" layoutY="240.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="34.0" text="-" />
-
-      <!-- Add to Cart Button -->
-      <Button layoutX="50.0" layoutY="280.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #90571C; -fx-background-radius: 15;" text="Add to Cart" textFill="white" />
+            <Text fx:id="COFFENAME" layoutX="119.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARAMEL MACCHIATOS" wrappingWidth="141.31640625">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="COFFEDESCRIPTION" fill="#929292" layoutX="119.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chilled milk, espresso, and caramel syrup." wrappingWidth="153.541015625" />
+            <Text fx:id="mainPrice" layoutX="121.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱39">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font></Text>
+            <Text layoutX="29.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MOOD">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="26.0" layoutY="164.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;">
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/fire%201.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="59.0" layoutY="164.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;">
+               <graphic>
+                  <ImageView fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/snowflake%201.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text fx:id="SIZE" layoutX="129.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIZE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="127.0" layoutY="191.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="S" textFill="#ff8000">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <Button layoutX="159.0" layoutY="191.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="M" textFill="#603000">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="197.0" layoutY="191.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 60px;" text="L" textFill="RED">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="42.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #90571C;" text="Add to Cart" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <Text layoutX="29.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUANTITY">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="126.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱39">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="161.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱69">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="196.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱99">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="77.0" layoutY="220.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="34.0" text="+" />
+            <TextArea editable="false" layoutX="53.0" layoutY="220.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="23.0" text="1" wrapText="true" />
+            <Button layoutX="19.0" layoutY="220.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="34.0" text="-" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
