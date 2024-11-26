@@ -12,7 +12,7 @@ import java.io.IOException;
 public class LOGINPAGELAUNCH extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(LOGINPAGELAUNCH.class.getResource("MENU.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LOGINPAGELAUNCH.class.getResource("orderContainer.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();

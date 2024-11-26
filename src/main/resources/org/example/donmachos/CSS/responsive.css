@@ -9,3 +9,8 @@
     -fx-border-width: 0px 0px 0px 3px;
     -fx-text-fill:  #90571C;
 }
+
+.itemcartbtn:hover {
+    -fx-background-color-color: #146886;
+    -fx-border-color: #90571C;
+}

@@ -73,6 +73,22 @@ public class orderCont implements Initializable {
             carts.setCoffeDescription("High-quality dark chocolate, chocolate syrup.");
             carts.setBestSeller(true);
             carlist.add(carts);
+
+            carts = new cart();
+            carts.setImage("images/9 3.png");
+            carts.setCoffeName("DON\n" +
+                    "MATCHATOS");
+            carts.setCoffeDescription("Pure matcha from Japan, chilled milk, matcha syrup.");
+            carts.setBestSeller(true);
+            carlist.add(carts);
+
+            carts = new cart();
+            carts.setImage("images/10 1.png");
+            carts.setCoffeName("MATCHA\n" +
+                    "BERRY");
+            carts.setCoffeDescription("Matcha, strawberry extract syrup, chilled milk.");
+            carts.setBestSeller(true);
+            carlist.add(carts);
         }
 
         return carlist;

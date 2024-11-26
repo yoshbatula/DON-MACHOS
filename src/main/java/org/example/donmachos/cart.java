@@ -8,6 +8,34 @@ public class cart {
     private String CoffeName;
     private String CoffeDescription;
     private boolean bestSeller;
+    private int Quantity;
+
+    public int getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    private Double price;
+    private String size;
 
     public boolean isBestSeller() {
         return bestSeller;
