@@ -64,20 +64,12 @@ public class menuOrderCONT  {
     private double basePrice = 39;
     private String temperature = "Hot";
 
-    public void setData(cart carts) {
-        System.out.println("Setting data for: " + carts.getCoffeName());
-        this.cartlist = carts;
-        Image image = new Image(getClass().getResourceAsStream(cartlist.getImage()));
-        imgView.setImage(image);
-        COFFENAME.setText(cartlist.getCoffeName());
-        COFFEDESCRIPTION.setText(cartlist.getCoffeDescription());
-        mainPrice.setText(String.format("₱%.2f", basePrice));
-    }
 
     public void handleHotColdSelection(ActionEvent event) {
         if (event.getSource() == hotBTN) {
             temperature = "Hot";
             SIZE.setText("Hot");
+            System.out.println(temperature);
         } else if (event.getSource() == iceBTN) {
             temperature = "Cold";
             SIZE.setText("Cold");
@@ -133,7 +125,7 @@ public class menuOrderCONT  {
 
     private void addCartItemToCartUI(cart item) {
         HBox cartItem = new HBox();
-        cartItem.setSpacing(10);
+        cartItem.setSpacing(20);
 
         Text itemDetails = new Text(
                 item.getCoffeName() + " (" + item.getSize() + ") - Qty: " + item.getQuantity() + " - ₱" + item.getPrice()
