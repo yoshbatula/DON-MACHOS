@@ -56,6 +56,7 @@ public class orderContainerCont {
 
     @FXML
     private TextArea textAreaQuant;
+
     private cart cartlist;
     private double basePrice = 39;
     private CartListener cartListener;
@@ -64,30 +65,15 @@ public class orderContainerCont {
         this.cartlist = carts;
         this.cartListener = cartListener;
 
-        if (hotBTN != null) {
-            hotBTN.setOnAction(event -> cartListener.onHandleMood(event));
-        }
-        if (iceBTN != null) {
-            iceBTN.setOnAction(event -> cartListener.onHandleMood(event));
-        }
-        if (smallSize != null) {
-            smallSize.setOnAction(event -> cartListener.handleSize(event));
-        }
-        if (mediumSize != null) {
-            mediumSize.setOnAction(event -> cartListener.handleSize(event));
-        }
-        if (largeSize != null) {
-            largeSize.setOnAction(event -> cartListener.handleSize(event));
-        }
-        if (minusBTN != null) {
-            minusBTN.setOnAction(event -> cartListener.handleQuantity(event));
-        }
-        if (plusBTN != null) {
-            plusBTN.setOnAction(event -> cartListener.handleQuantity(event));
-        }
-        if (addTocartBTN != null) {
-            addTocartBTN.setOnAction(event -> cartListener.handleAddToCart(carts));
-        }
+
+        hotBTN.setOnAction(cartListener::onHandleMood);
+        iceBTN.setOnAction(cartListener::onHandleMood);
+        smallSize.setOnAction(cartListener::handleSize);
+        mediumSize.setOnAction(cartListener::handleSize);
+        largeSize.setOnAction(cartListener::handleSize);
+        plusBTN.setOnAction(cartListener::handleQuantity);
+        minusBTN.setOnAction(cartListener::handleQuantity);
+        addTocartBTN.setOnAction(e -> cartListener.handleAddToCart(carts));
 
         Image image = new Image(getClass().getResourceAsStream(cartlist.getImage()));
         imgView.setImage(image);
@@ -126,5 +112,17 @@ public class orderContainerCont {
 
     public Text getSize() {
         return SIZE;
+    }
+
+    public Text getMainPrice() {
+        return mainPrice;
+    }
+
+    public TextArea getTextAreaQuant() {
+        return textAreaQuant;
+    }
+
+    public Button getAddTocartBTN() {
+        return addTocartBTN;
     }
 }

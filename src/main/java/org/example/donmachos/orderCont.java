@@ -1,15 +1,13 @@
 package org.example.donmachos;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -25,49 +23,39 @@ import java.util.ResourceBundle;
 public class orderCont implements Initializable {
 
     private CartListener cartListener;
-    static orderContainerCont ordercont = new orderContainerCont();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cartListener = new CartListener() {
-
             @Override
             public void onHandleMood(ActionEvent event) {
-                if (hotBTN.isPressed()) {
-                    hotBTN.setStyle("-fx-background-color: red");
-                } else if (iceBTN.isPressed()) {
-                    iceBTN.setStyle("-fx-background-color: red");
-                }
+
             }
 
             @Override
             public void handleSize(ActionEvent event) {
-                if (smallSize.isPressed()) {
-                    basePrice = 39;
-                    SIZE.setText("Small");
-                } else if (mediumSize.isPressed()) {
-                    basePrice = 69;
-                    SIZE.setText("Medium");
-                } else if (largeSize.isPressed()) {
-                    basePrice = 99;
-                    SIZE.setText("Large");
-                }
-                updatePrice();
+                Button source = (Button) event.getSource();
+                String size = source.getText();
+                double price = switch (size) {
+                    case "Small" -> 39;
+                    case "Medium" -> 69;
+                    case "Large" -> 99;
+                    default -> 0;
+                };
+                System.out.println("Selected Size: " + size + " | Price: " + price);
             }
 
             @Override
             public void handleQuantity(ActionEvent event) {
-                if (minusBTN.isPressed() && quantity > 1) {
-                    quantity--;
-                } else if (plusBTN.isPressed()) {
-                    quantity++;
-                }
-                textAreaQuant.setText(String.valueOf(quantity));
-                updatePrice();
+                Button source = (Button) event.getSource();
+                boolean isIncrement = source.getText().equals("+");
+                System.out.println("Quantity " + (isIncrement ? "Increased" : "Decreased"));
             }
 
             @Override
-            public void handleAddToCart(cart carts) {
-                addCartItemToCartUI(carts);
+            public void handleAddToCart(cart item) {
+                System.out.println("Added to cart: " + item.getCoffeName());
+                addCartItemToCartUI(item);
             }
         };
 
@@ -81,43 +69,30 @@ public class orderCont implements Initializable {
                 fxmlLoader.setLocation(getClass().getResource("orderContainer.fxml"));
                 AnchorPane pane = fxmlLoader.load();
 
-                orderContainerCont ordercont = fxmlLoader.getController();
-                ordercont.setData(item, cartListener);
+                orderContainerCont orderController = fxmlLoader.getController();
+                orderController.setData(item, cartListener);
 
-                Button hotBTN = ordercont.getHotBTN();
-                Button iceBTN = ordercont.getIceBTN();
-                Button smallSize = ordercont.getSmallSize();
-                Button mediumSize = ordercont.getMediumSize();
-                Button largeSize = ordercont.getLargeSize();
-                Text Size = ordercont.getSize();
+                Button hotBTN = orderController.getHotBTN();
 
-                if (hotBTN.isPressed()) {
-                    temperature = "Hot";
-                    System.out.println(temperature);
-                } else if (iceBTN.isPressed()) {
-                    temperature = "Ice";
-                    System.out.println(temperature);
-                } else if (smallSize.isPressed()) {
-                    basePrice = 39;
-                    Size.setText("Small");
+                hotBTN.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        temperature = "Hot";
+                        System.out.println(temperature);
+                    }
+                });
 
-                }
 
                 if (column == 2) {
                     column = 0;
                     row++;
                 }
                 grid.add(pane, column++, row);
-                GridPane.setMargin(pane, new Insets(25));
+                GridPane.setMargin(pane, new Insets(30));
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-    }
-
-    private void updatePrice() {
-        double totalPrice = basePrice * quantity;
-        mainPrice.setText(String.format("₱%.2f", totalPrice));
     }
 
     private void addCartItemToCartUI(cart item) {
@@ -125,7 +100,7 @@ public class orderCont implements Initializable {
         cartItem.setSpacing(20);
 
         Text itemDetails = new Text(
-                item.getCoffeName() + " (" + item.getSize() + ") - Qty: " + item.getQuantity() + " - ₱" + item.getPrice()
+                item.getCoffeName() + " - Qty: " + item.getQuantity() + " - ₱" + item.getPrice()
         );
 
         Button removeButton = new Button("Remove");
@@ -141,38 +116,9 @@ public class orderCont implements Initializable {
     @FXML
     private ScrollPane scroll;
     @FXML
-    private AnchorPane menuItems;
-    @FXML
     private VBox cartContent;
-    @FXML
-    private Button largeSize;
-    @FXML
-    private Text mainPrice;
-    @FXML
-    private Button mediumSize;
-    @FXML
-    private Button minusBTN;
-    @FXML
-    private Button plusBTN;
-    @FXML
-    private Button smallSize;
-    @FXML
-    private Text SIZE;
-    @FXML
-    private Button addTocartBTN;
-    @FXML
-    private Button hotBTN;
-    @FXML
-    private Button iceBTN;
-    @FXML
-    private TextArea textAreaQuant;
 
-    private cart cartlist;
-    private int quantity = 1;
-    private double basePrice = 39;
-    private String temperature = "Hot";
-
-    private List<cart> carlist = new ArrayList<>();
+    private String temperature;
 
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
@@ -227,4 +173,3 @@ public class orderCont implements Initializable {
         return bestSellers;
     }
 }
-
