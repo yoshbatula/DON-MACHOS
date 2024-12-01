@@ -1,9 +1,10 @@
 package org.example.donmachos;
 
-public interface CartListener {
+import javafx.event.ActionEvent;
 
-    public void onHandleMood();
-    public void handleSize(cart carts);
-    public void handleQuantity();
-    public void handleAddToCart();
+public interface CartListener {
+    public void onHandleMood(ActionEvent event);
+    public void handleSize(ActionEvent event);
+    public void handleQuantity(ActionEvent event);
+    public void handleAddToCart(cart carts);
 }

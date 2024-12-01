@@ -7,6 +7,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import org.example.donmachos.CartListener;
+import org.example.donmachos.cart;
 
 public class orderContainerCont {
 
@@ -58,50 +60,71 @@ public class orderContainerCont {
     private double basePrice = 39;
     private CartListener cartListener;
 
-
     public void setData(cart carts, CartListener cartListener) {
-        System.out.println("Setting data for: " + carts.getCoffeName());
         this.cartlist = carts;
         this.cartListener = cartListener;
+
+        if (hotBTN != null) {
+            hotBTN.setOnAction(event -> cartListener.onHandleMood(event));
+        }
+        if (iceBTN != null) {
+            iceBTN.setOnAction(event -> cartListener.onHandleMood(event));
+        }
+        if (smallSize != null) {
+            smallSize.setOnAction(event -> cartListener.handleSize(event));
+        }
+        if (mediumSize != null) {
+            mediumSize.setOnAction(event -> cartListener.handleSize(event));
+        }
+        if (largeSize != null) {
+            largeSize.setOnAction(event -> cartListener.handleSize(event));
+        }
+        if (minusBTN != null) {
+            minusBTN.setOnAction(event -> cartListener.handleQuantity(event));
+        }
+        if (plusBTN != null) {
+            plusBTN.setOnAction(event -> cartListener.handleQuantity(event));
+        }
+        if (addTocartBTN != null) {
+            addTocartBTN.setOnAction(event -> cartListener.handleAddToCart(carts));
+        }
+
         Image image = new Image(getClass().getResourceAsStream(cartlist.getImage()));
         imgView.setImage(image);
         COFFENAME.setText(cartlist.getCoffeName());
         COFFEDESCRIPTION.setText(cartlist.getCoffeDescription());
         mainPrice.setText(String.format("₱%.2f", basePrice));
-
-        largeSize.setOnAction(event ->{
-            cartListener.handleSize(carts);
-        });
-
-        mediumSize.setOnAction(event ->{
-            cartListener.handleSize(carts);
-        });
-
-        smallSize.setOnAction(event ->{
-            cartListener.handleSize(carts);
-        });
-
-        iceBTN.setOnAction(event ->{
-            cartListener.onHandleMood();
-        });
-
-        hotBTN.setOnAction(event ->{
-            cartListener.onHandleMood();
-        });
-
-        minusBTN.setOnAction(event ->{
-            cartListener.handleQuantity();
-        });
-
-        plusBTN.setOnAction(event ->{
-            cartListener.handleQuantity();
-        });
-
-        addTocartBTN.setOnAction(event ->{
-            cartListener.handleAddToCart();
-        });
     }
 
+    public Button getHotBTN() {
+        return hotBTN;
+    }
 
+    public Button getIceBTN() {
+        return iceBTN;
+    }
 
+    public Button getSmallSize() {
+        return smallSize;
+    }
+
+    public Button getMediumSize() {
+        return mediumSize;
+    }
+
+    public Button getLargeSize() {
+        return largeSize;
+    }
+
+    public Button getMinusBTN() {
+        return minusBTN;
+    }
+
+    public Button getPlusBTN() {
+        return plusBTN;
+    }
+
+    public Text getSize() {
+        return SIZE;
+    }
 }
