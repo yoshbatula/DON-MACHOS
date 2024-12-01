@@ -93,6 +93,13 @@ public class orderCont implements Initializable {
 
                 if (hotBTN.isPressed()) {
                     temperature = "Hot";
+                    System.out.println(temperature);
+                } else if (iceBTN.isPressed()) {
+                    temperature = "Ice";
+                    System.out.println(temperature);
+                } else if (smallSize.isPressed()) {
+                    basePrice = 39;
+                    Size.setText("Small");
 
                 }
 
