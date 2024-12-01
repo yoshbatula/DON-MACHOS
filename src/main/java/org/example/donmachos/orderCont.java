@@ -73,6 +73,7 @@ public class orderCont implements Initializable {
                 orderController.setData(item, cartListener);
 
                 Button hotBTN = orderController.getHotBTN();
+                Button iceBTN = orderController.getIceBTN();
 
                 hotBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -81,6 +82,18 @@ public class orderCont implements Initializable {
                         System.out.println(temperature);
                     }
                 });
+
+                hotBTN.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        temperature = "Ice";
+                        System.out.println(temperature);
+                    }
+                });
+
+
+
+
 
 
                 if (column == 2) {
