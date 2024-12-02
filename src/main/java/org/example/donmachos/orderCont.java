@@ -24,7 +24,7 @@ import java.util.ResourceBundle;
 public class orderCont implements Initializable {
 
     private CartListener cartListener;
-
+    List<cartItems> cartModel = new ArrayList<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         cartListener = new CartListener() {
@@ -41,10 +41,23 @@ public class orderCont implements Initializable {
             public void handleQuantity(ActionEvent event) {
 
             }
-
             @Override
             public void handleAddToCart(cart item) {
-
+                cartItems existingItem = findItemInCart(cartModel, item, item.getSize(), temperature);
+                if (existingItem != null) {
+                    existingItem.setQuantity(existingItem.getQuantity() + quantity);
+                    existingItem.setPrice(existingItem.getPrice() + (basePrice * quantity));
+                } else {
+                    cartItems cartItem = new cartItems();
+                    cartItem.setCoffeNames(item.getCoffeName());
+                    cartItem.setMood(temperature);
+                    cartItem.setSize(cartItem.getSize());
+                    cartItem.setQuantity(quantity);
+                    cartItem.setPrice((double) (basePrice * quantity));
+                    cartItem.setImage(item.getImage());
+                    cartModel.add(cartItem);
+                }
+                updateCartUI(cartModel);
             }
         };
 
@@ -81,7 +94,7 @@ public class orderCont implements Initializable {
                     }
                 });
 
-                hotBTN.setOnAction(new EventHandler<ActionEvent>() {
+                iceBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
                         temperature = "Ice";
@@ -137,9 +150,10 @@ public class orderCont implements Initializable {
                 addToCart.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        addCartItemToCartUI(item);
+                        cartListener.handleAddToCart(item);
                     }
                 });
+
 
                 if (column == 2) {
                     column = 0;
@@ -153,20 +167,33 @@ public class orderCont implements Initializable {
         }
     }
 
-    private void addCartItemToCartUI(cart item) {
-        HBox cartItem = new HBox();
-        cartItem.setSpacing(20);
+    private cartItems findItemInCart(List<cartItems> cartModel, cart item, String selectedSize, String selectedMood) {
+        for (cartItems cartItem : cartModel) {
+            if (cartItem.getCoffeNames().equals(item.getCoffeName()) &&
+                    cartItem.getSize().equals(selectedSize) &&
+                    cartItem.getMood().equals(selectedMood)) {
+                return cartItem;
+            }
+        }
+        return null;
+    }
 
-        Text itemDetails = new Text(
-                item.getImage() + item.getCoffeName() + "Qty: " + quantity + " - ₱" + basePrice
-        );
+    private void updateCartUI(List<cartItems> cartModel) {
+        cartContent.getChildren().clear();
+        for (cartItems cartItem : cartModel) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("addtocart.fxml"));
+                AnchorPane cartItemPane = fxmlLoader.load();
 
-        Button removeButton = new Button("Remove");
-        removeButton.setStyle("-fx-background-color: red; -fx-text-fill: white;");
-        removeButton.setOnAction(e -> cartContent.getChildren().remove(cartItem));
+                addtocartcont cartController = fxmlLoader.getController();
+                cartController.setData(cartItem);
 
-        cartItem.getChildren().addAll(itemDetails, removeButton);
-        cartContent.getChildren().add(cartItem);
+                cartContent.getChildren().add(cartItemPane);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
@@ -176,7 +203,7 @@ public class orderCont implements Initializable {
     @FXML
     private VBox cartContent;
 
-    private String temperature;
+    private String temperature = "Hot";
 
     private int basePrice = 39;
 

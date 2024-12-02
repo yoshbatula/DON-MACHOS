@@ -73,7 +73,6 @@ public class orderContainerCont {
         largeSize.setOnAction(cartListener::handleSize);
         plusBTN.setOnAction(cartListener::handleQuantity);
         minusBTN.setOnAction(cartListener::handleQuantity);
-        addTocartBTN.setOnAction(e -> cartListener.handleAddToCart(carts));
 
         Image image = new Image(getClass().getResourceAsStream(cartlist.getImage()));
         imgView.setImage(image);
