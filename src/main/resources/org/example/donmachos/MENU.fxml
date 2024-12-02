@@ -133,7 +133,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="addCARTBESTSELLER21" layoutX="67.0" layoutY="424.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="ORDER" textFill="WHITE">
+                              <Button fx:id="cartOrderBTN" layoutX="67.0" layoutY="424.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="ORDER" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
                                  </font>
@@ -229,7 +229,7 @@
                 <Font name="Arial Black" size="14.0" />
             </font>
         </Button>
-        <Button layoutX="248.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="ORDER">
+        <Button fx:id="orderBTN" layoutX="248.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="ORDER">
             <font>
                 <Font name="Arial Black" size="14.0" />
             </font>

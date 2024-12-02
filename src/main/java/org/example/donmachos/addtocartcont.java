@@ -47,4 +47,8 @@ public class addtocartcont {
     public Text getSizeCart() {
         return sizeCart;
     }
+
+    public Button getRemoveBTN() {
+        return removeBTN;
+    }
 }

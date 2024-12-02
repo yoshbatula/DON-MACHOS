@@ -6,11 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -66,6 +68,11 @@ public class orderCont implements Initializable {
 
         for (cart item : sortedList) {
             try {
+
+                cartContent.getChildren().clear();
+                grid.getColumnConstraints().clear();
+                grid.getRowConstraints().clear();
+
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("orderContainer.fxml"));
                 AnchorPane pane = fxmlLoader.load();
@@ -84,6 +91,7 @@ public class orderCont implements Initializable {
                 Text mainPrice = orderController.getMainPrice();
                 Text Size = orderController.getSize();
                 TextArea textAreaQuant = orderController.getTextAreaQuant();
+
 
                 hotBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -159,13 +167,15 @@ public class orderCont implements Initializable {
                     }
                 });
 
+                GridPane.setMargin(pane, new Insets(10));
+                grid.add(pane, column++, row);
 
                 if (column == 2) {
                     column = 0;
                     row++;
                 }
-                grid.add(pane, column++, row);
-                GridPane.setMargin(pane, new Insets(20));
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -183,6 +193,18 @@ public class orderCont implements Initializable {
         return null;
     }
 
+    public void switchForm(ActionEvent event) throws IOException {
+
+        if (event.getSource() == homeBTN) {
+            Stage stage = new Stage();
+            FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("HOMEINTERFACE.fxml"));
+            Scene scene = new Scene(fxmlloader.load());
+            stage.setTitle("HOME PAGE");
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
+
     private void updateSubtotalAndTotal() {
         double subtotalAmount = 0;
         double totalAmount = 0;
@@ -196,6 +218,14 @@ public class orderCont implements Initializable {
 
         subtotaltext.setText("₱" + String.format("%.2f", subtotalAmount));
         totalText.setText("₱" + String.format("%.2f", totalAmount));
+    }
+
+    private void removeItemFromCart(cartItems cartItemToRemove) {
+        System.out.println("Before removal" + cartModel);
+        cartModel.removeIf(cartItem -> cartItem.equals(cartItemToRemove));
+        System.out.println("After cart" + cartModel);
+        updateSubtotalAndTotal();
+        updateCartUI(cartModel);
     }
 
     private void updateCartUI(List<cartItems> cartModel) {
@@ -216,6 +246,16 @@ public class orderCont implements Initializable {
                 addtocartcont cartController = fxmlLoader.getController();
                 cartController.setData(cartItem);
 
+                Button removeBTN = cartController.getRemoveBTN();
+
+                removeBTN.setOnAction(new EventHandler<ActionEvent>() {
+
+                    @Override
+                    public void handle(ActionEvent event) {
+                        removeItemFromCart(cartItem);
+                    }
+                });
+
                 gridAddCart.add(cartItemPane, column, row);
                 GridPane.setMargin(cartItemPane, new Insets(10));
 
@@ -233,6 +273,14 @@ public class orderCont implements Initializable {
         }
     }
 
+    @FXML
+    private Button cartOrderBTN;
+
+    @FXML
+    private Button homeBTN;
+
+    @FXML
+    private Button orderBTN;
 
     @FXML
     private GridPane gridAddCart;
