@@ -74,6 +74,8 @@ public class orderCont implements Initializable {
 
                 Button hotBTN = orderController.getHotBTN();
                 Button iceBTN = orderController.getIceBTN();
+                Button smallSize = orderController.getSmallSize();
+                Text Size = orderController.getSize();
 
                 hotBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -91,7 +93,13 @@ public class orderCont implements Initializable {
                     }
                 });
 
-
+                smallSize.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        basePrice = 39;
+                        Size.setText("Small");
+                    }
+                });
 
 
 
@@ -132,6 +140,8 @@ public class orderCont implements Initializable {
     private VBox cartContent;
 
     private String temperature;
+
+    private int basePrice;
 
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
