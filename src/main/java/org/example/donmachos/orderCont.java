@@ -55,6 +55,7 @@ public class orderCont implements Initializable {
                     cartItem.setImage(item.getImage());
                     cartModel.add(cartItem);
                 }
+                updateSubtotalAndTotal();
                 updateCartUI(cartModel);
             }
         };
@@ -182,8 +183,22 @@ public class orderCont implements Initializable {
         return null;
     }
 
+    private void updateSubtotalAndTotal() {
+        double subtotalAmount = 0;
+        double totalAmount = 0;
+
+        for (cartItems cartItem : cartModel) {
+            double itemSubtotal = cartItem.getPrice();
+            subtotalAmount += itemSubtotal;
+            totalAmount += itemSubtotal;
+        }
+
+
+        subtotaltext.setText("₱" + String.format("%.2f", subtotalAmount));
+        totalText.setText("₱" + String.format("%.2f", totalAmount));
+    }
+
     private void updateCartUI(List<cartItems> cartModel) {
-        System.out.println("Updating cart UI...");
         cartContent.getChildren().clear();
 
         gridAddCart.getColumnConstraints().clear();
@@ -205,14 +220,12 @@ public class orderCont implements Initializable {
                 GridPane.setMargin(cartItemPane, new Insets(10));
 
                 if (column == 0) {
-                    column = 1;
+                    row++;
                 } else {
                     column = 0;
                     row++;
                 }
 
-                if (row == 0) {
-                }
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -223,6 +236,11 @@ public class orderCont implements Initializable {
 
     @FXML
     private GridPane gridAddCart;
+    @FXML
+    private Text subtotaltext;
+
+    @FXML
+    private Text totalText;
 
     @FXML
     private GridPane grid;
