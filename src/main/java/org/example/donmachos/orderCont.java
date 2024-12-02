@@ -80,6 +80,7 @@ public class orderCont implements Initializable {
                 Button largeSize = orderController.getLargeSize();
                 Button minusBTN = orderController.getMinusBTN();
                 Button plusBTN = orderController.getPlusBTN();
+                Button addToCart = orderController.getAddTocartBTN();
                 Text mainPrice = orderController.getMainPrice();
                 Text Size = orderController.getSize();
                 TextArea textAreaQuant = orderController.getTextAreaQuant();
@@ -145,13 +146,19 @@ public class orderCont implements Initializable {
                     }
                 });
 
+                addToCart.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        addCartItemToCartUI(item);
+                    }
+                });
 
                 if (column == 2) {
                     column = 0;
                     row++;
                 }
                 grid.add(pane, column++, row);
-                GridPane.setMargin(pane, new Insets(30));
+                GridPane.setMargin(pane, new Insets(20));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -163,7 +170,7 @@ public class orderCont implements Initializable {
         cartItem.setSpacing(20);
 
         Text itemDetails = new Text(
-                item.getCoffeName() + " - Qty: " + item.getQuantity() + " - ₱" + item.getPrice()
+                item.getImage() + item.getCoffeName() + "Qty: " + quantity + " - ₱" + basePrice
         );
 
         Button removeButton = new Button("Remove");
@@ -183,9 +190,9 @@ public class orderCont implements Initializable {
 
     private String temperature;
 
-    private int basePrice;
+    private int basePrice = 39; // default baseprice
 
-    private int quantity;
+    private int quantity = 1; // default quantity
 
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();

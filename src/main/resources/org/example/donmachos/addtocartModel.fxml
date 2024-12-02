@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="50.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="99.0" fitWidth="95.0" layoutX="-14.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/9%201.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="79.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARAMEL MACCHIATOS" wrappingWidth="95.19024658203125">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#90571c" layoutX="79.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SMALL">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Text fill="#90571c" layoutX="138.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOT">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="81.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="x1">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Text>
+      <Text layoutX="255.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱39.00">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="126.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&amp;" />
+   </children>
+</AnchorPane>
