@@ -40,7 +40,7 @@ public class addtocartcont {
         cartCoffeName.setText(cartitems.getCoffeNames());
         moodCart.setText(cartitems.getMood());
         sizeCart.setText(cartitems.getSize());
-        quantityCart.setText(String.valueOf(cartitems.getQuantity()));
+        quantityCart.setText("Qty: " + cartitems.getQuantity());
         priceCart.setText("₱" + cartitems.getPrice());
     }
 

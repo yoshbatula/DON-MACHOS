@@ -9,10 +9,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -126,10 +123,13 @@ public class orderCont implements Initializable {
                 largeSize.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
+
                         basePrice = 99;
                         selectedSize = "Large";
+
                         Size.setText(selectedSize);
-                        mainPrice.setText(String.valueOf("₱" + basePrice));
+                        mainPrice.setText("₱" + basePrice);
+
                     }
                 });
 
@@ -154,7 +154,6 @@ public class orderCont implements Initializable {
                 addToCart.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        System.out.println("Add to Cart button clicked");
                         cartListener.handleAddToCart(item);
                     }
                 });
@@ -184,8 +183,12 @@ public class orderCont implements Initializable {
     }
 
     private void updateCartUI(List<cartItems> cartModel) {
-        System.out.println("Updating cart UI...");  // Debugging
+        System.out.println("Updating cart UI...");
         cartContent.getChildren().clear();
+
+        gridAddCart.getColumnConstraints().clear();
+        gridAddCart.getRowConstraints().clear();
+
         int column = 0;
         int row = 0;
 
@@ -207,6 +210,10 @@ public class orderCont implements Initializable {
                     column = 0;
                     row++;
                 }
+
+                if (row == 0) {
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
