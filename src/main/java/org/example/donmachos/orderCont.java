@@ -43,7 +43,8 @@ public class orderCont implements Initializable {
             }
             @Override
             public void handleAddToCart(cart item) {
-                cartItems existingItem = findItemInCart(cartModel, item, item.getSize(), temperature);
+
+                cartItems existingItem = findItemInCart(cartModel, item, selectedSize, temperature);
                 if (existingItem != null) {
                     existingItem.setQuantity(existingItem.getQuantity() + quantity);
                     existingItem.setPrice(existingItem.getPrice() + (basePrice * quantity));
@@ -51,9 +52,9 @@ public class orderCont implements Initializable {
                     cartItems cartItem = new cartItems();
                     cartItem.setCoffeNames(item.getCoffeName());
                     cartItem.setMood(temperature);
-                    cartItem.setSize(cartItem.getSize());
+                    cartItem.setSize(selectedSize);
                     cartItem.setQuantity(quantity);
-                    cartItem.setPrice((double) (basePrice * quantity));
+                    cartItem.setPrice(Double.valueOf(basePrice * quantity));
                     cartItem.setImage(item.getImage());
                     cartModel.add(cartItem);
                 }
@@ -106,7 +107,8 @@ public class orderCont implements Initializable {
                     @Override
                     public void handle(ActionEvent event) {
                         basePrice = 39;
-                        Size.setText("Small");
+                        selectedSize = "Small";
+                        Size.setText(selectedSize);
                         mainPrice.setText(String.valueOf("₱" + basePrice));
                     }
                 });
@@ -115,7 +117,8 @@ public class orderCont implements Initializable {
                     @Override
                     public void handle(ActionEvent event) {
                         basePrice = 69;
-                        Size.setText("Medium");
+                        selectedSize = "Medium";
+                        Size.setText(selectedSize);
                         mainPrice.setText(String.valueOf("₱" + basePrice));
                     }
                 });
@@ -124,7 +127,8 @@ public class orderCont implements Initializable {
                     @Override
                     public void handle(ActionEvent event) {
                         basePrice = 99;
-                        Size.setText("Large");
+                        selectedSize = "Large";
+                        Size.setText(selectedSize);
                         mainPrice.setText(String.valueOf("₱" + basePrice));
                     }
                 });
@@ -170,8 +174,8 @@ public class orderCont implements Initializable {
     private cartItems findItemInCart(List<cartItems> cartModel, cart item, String selectedSize, String selectedMood) {
         for (cartItems cartItem : cartModel) {
             if (cartItem.getCoffeNames().equals(item.getCoffeName()) &&
-                    cartItem.getSize().equals(selectedSize) &&
-                    cartItem.getMood().equals(selectedMood)) {
+                    (cartItem.getSize() != null && cartItem.getSize().equals(selectedSize)) &&
+                    (cartItem.getMood() != null && cartItem.getMood().equals(selectedMood))) {
                 return cartItem;
             }
         }
@@ -180,21 +184,35 @@ public class orderCont implements Initializable {
 
     private void updateCartUI(List<cartItems> cartModel) {
         cartContent.getChildren().clear();
+        int column = 0;
+        int row = 0;
+
         for (cartItems cartItem : cartModel) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("addtocart.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("addtocartModel.fxml"));
                 AnchorPane cartItemPane = fxmlLoader.load();
 
                 addtocartcont cartController = fxmlLoader.getController();
                 cartController.setData(cartItem);
 
-                cartContent.getChildren().add(cartItemPane);
+                gridAddCart.add(cartItemPane, column, row);
+                GridPane.setMargin(cartItemPane, new Insets(10));
+
+                if (column == 0) {
+                    column = 1;
+                } else {
+                    column = 0;
+                    row++;
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
+
+    @FXML
+    private GridPane gridAddCart;
 
     @FXML
     private GridPane grid;
@@ -208,6 +226,8 @@ public class orderCont implements Initializable {
     private int basePrice = 39;
 
     private int quantity = 1;
+
+    private String selectedSize = "Small";
 
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
