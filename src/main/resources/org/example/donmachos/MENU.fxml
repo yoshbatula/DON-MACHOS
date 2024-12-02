@@ -31,16 +31,12 @@
                         </Label>
                         <AnchorPane layoutX="1.0" layoutY="360.0" prefHeight="1434.0" prefWidth="1093.0">
                             <children>
-                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="1110.0" layoutX="-12.0" layoutY="-3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1092.0" />
+                                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="1197.0" layoutY="-90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1080.0" />
                                 <Label layoutX="548.0" layoutY="434.0" prefHeight="22.0" prefWidth="401.0">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
                                 </Label>
-                        <AnchorPane layoutX="21.0" layoutY="16.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-radius: 20px; -fx-background-color: #efefef;" />
-                        <AnchorPane layoutX="328.0" layoutY="15.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-radius: 20px; -fx-background-color: #efefef;" />
-                        <AnchorPane layoutX="21.0" layoutY="339.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-radius: 20px; -fx-background-color: #efefef;" />
-                        <AnchorPane layoutX="328.0" layoutY="339.0" prefHeight="311.0" prefWidth="279.0" style="-fx-background-radius: 20px; -fx-background-color: #efefef;" />
                             </children>
                         </AnchorPane>
                   <Label layoutX="64.0" layoutY="112.0" prefHeight="38.0" prefWidth="236.0" text="CHOOSE CATEGORY" textFill="#050505" wrapText="true">
@@ -79,34 +75,22 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="14.0" layoutY="258.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1189.0" prefWidth="650.0">
+                  <AnchorPane layoutX="14.0" layoutY="259.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1189.0" prefWidth="650.0">
                      <children>
-                        <HBox prefHeight="1186.0" prefWidth="654.0">
+                        <HBox layoutY="-1.0" prefHeight="1187.0" prefWidth="654.0">
                            <children>
                               <GridPane fx:id="grid" alignment="CENTER" hgap="20" prefHeight="1242.0" prefWidth="221.0" style="-fx-padding: 10;" vgap="20">
                                  <columnConstraints>
                                     <ColumnConstraints hgrow="ALWAYS" maxWidth="250" minWidth="200" />
                                  </columnConstraints>
                               </GridPane>
-                              <VBox prefHeight="1193.0" prefWidth="631.0" />
+                              <VBox prefHeight="1348.0" prefWidth="434.0" />
                            </children>
                         </HBox>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="684.0" layoutY="224.0" prefHeight="325.0" prefWidth="319.0">
                      <children>
-                        <ScrollPane fx:id="cartScrollPane" hbarPolicy="NEVER" layoutX="5.0" layoutY="39.0" pannable="true" prefHeight="229.0" prefWidth="316.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
-                           <content>
-                              <VBox fx:id="cartContent" prefHeight="225.0" prefWidth="317.0">
-                                 <children>
-                                    <GridPane fx:id="gridAddCart" prefHeight="0.0" prefWidth="318.0">
-                                       <rowConstraints>
-                                          <RowConstraints minHeight="10.0" prefHeight="30.0" />
-                                       </rowConstraints>
-                                    </GridPane>
-                                 </children></VBox>
-                           </content>
-                        </ScrollPane>
                         <AnchorPane prefHeight="478.0" prefWidth="326.0" style="-fx-border-color: black; -fx-border-radius: 20px;">
                            <children>
                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="145.0" prefWidth="217.0" />
@@ -156,6 +140,20 @@
                               </Button>
                            </children>
                         </AnchorPane>
+                        <ScrollPane fx:id="cartScrollPane" hbarPolicy="NEVER" layoutX="6.0" layoutY="39.0" pannable="true" prefHeight="230.0" prefWidth="312.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                           <content>
+                              <HBox prefHeight="230.0" prefWidth="311.0">
+                                 <children>
+                                    <GridPane fx:id="gridAddCart" prefHeight="223.0" prefWidth="324.0">
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                       </rowConstraints>
+                                    </GridPane>
+                                    <VBox fx:id="cartContent" prefHeight="232.0" prefWidth="326.0" />
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
                   <ImageView fitHeight="21.0" fitWidth="16.0" layoutX="463.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">

@@ -154,6 +154,7 @@ public class orderCont implements Initializable {
                 addToCart.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
+                        System.out.println("Add to Cart button clicked");
                         cartListener.handleAddToCart(item);
                     }
                 });
@@ -183,6 +184,7 @@ public class orderCont implements Initializable {
     }
 
     private void updateCartUI(List<cartItems> cartModel) {
+        System.out.println("Updating cart UI...");  // Debugging
         cartContent.getChildren().clear();
         int column = 0;
         int row = 0;
@@ -210,6 +212,7 @@ public class orderCont implements Initializable {
             }
         }
     }
+
 
     @FXML
     private GridPane gridAddCart;
