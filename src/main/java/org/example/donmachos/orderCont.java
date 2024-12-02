@@ -35,28 +35,16 @@ public class orderCont implements Initializable {
 
             @Override
             public void handleSize(ActionEvent event) {
-                Button source = (Button) event.getSource();
-                String size = source.getText();
-                double price = switch (size) {
-                    case "Small" -> 39;
-                    case "Medium" -> 69;
-                    case "Large" -> 99;
-                    default -> 0;
-                };
-                System.out.println("Selected Size: " + size + " | Price: " + price);
             }
 
             @Override
             public void handleQuantity(ActionEvent event) {
-                Button source = (Button) event.getSource();
-                boolean isIncrement = source.getText().equals("+");
-                System.out.println("Quantity " + (isIncrement ? "Increased" : "Decreased"));
+
             }
 
             @Override
             public void handleAddToCart(cart item) {
-                System.out.println("Added to cart: " + item.getCoffeName());
-                addCartItemToCartUI(item);
+
             }
         };
 
@@ -190,9 +178,9 @@ public class orderCont implements Initializable {
 
     private String temperature;
 
-    private int basePrice = 39; // default baseprice
+    private int basePrice = 39;
 
-    private int quantity = 1; // default quantity
+    private int quantity = 1;
 
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
