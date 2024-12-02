@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -75,7 +76,13 @@ public class orderCont implements Initializable {
                 Button hotBTN = orderController.getHotBTN();
                 Button iceBTN = orderController.getIceBTN();
                 Button smallSize = orderController.getSmallSize();
+                Button mediumSize = orderController.getMediumSize();
+                Button largeSize = orderController.getLargeSize();
+                Button minusBTN = orderController.getMinusBTN();
+                Button plusBTN = orderController.getPlusBTN();
+                Text mainPrice = orderController.getMainPrice();
                 Text Size = orderController.getSize();
+                TextArea textAreaQuant = orderController.getTextAreaQuant();
 
                 hotBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -98,10 +105,45 @@ public class orderCont implements Initializable {
                     public void handle(ActionEvent event) {
                         basePrice = 39;
                         Size.setText("Small");
+                        mainPrice.setText(String.valueOf("₱" + basePrice));
                     }
                 });
 
+                mediumSize.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        basePrice = 69;
+                        Size.setText("Medium");
+                        mainPrice.setText(String.valueOf("₱" + basePrice));
+                    }
+                });
 
+                largeSize.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        basePrice = 99;
+                        Size.setText("Large");
+                        mainPrice.setText(String.valueOf("₱" + basePrice));
+                    }
+                });
+
+                minusBTN.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        if (quantity > 1) {
+                            quantity--;
+                            textAreaQuant.setText(String.valueOf(quantity));
+                        }
+                    }
+                });
+
+                plusBTN.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        quantity ++;
+                        textAreaQuant.setText(String.valueOf(quantity));
+                    }
+                });
 
 
                 if (column == 2) {
@@ -142,6 +184,8 @@ public class orderCont implements Initializable {
     private String temperature;
 
     private int basePrice;
+
+    private int quantity;
 
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
