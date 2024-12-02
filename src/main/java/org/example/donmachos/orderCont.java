@@ -221,18 +221,30 @@ public class orderCont implements Initializable {
     }
 
     private void removeItemFromCart(cartItems cartItemToRemove) {
-        System.out.println("Before removal" + cartModel);
-        cartModel.removeIf(cartItem -> cartItem.equals(cartItemToRemove));
-        System.out.println("After cart" + cartModel);
+        System.out.println("Before removal: " + cartModel.size() + " items.");
+        boolean removed = cartModel.removeIf(cartItem -> cartItem.equals(cartItemToRemove));
+        if (removed) {
+            System.out.println("Item removed successfully.");
+        } else {
+            System.out.println("Failed to remove item. Check equality logic.");
+        }
+        System.out.println("After removal: " + cartModel.size() + " items.");
         updateSubtotalAndTotal();
         updateCartUI(cartModel);
     }
 
     private void updateCartUI(List<cartItems> cartModel) {
+        System.out.println("CartContent children before clear: " + cartContent.getChildren().size());
         cartContent.getChildren().clear();
+        System.out.println("CartContent children after clear: " + cartContent.getChildren().size());
 
-        gridAddCart.getColumnConstraints().clear();
+        System.out.println("Grid children before clear: " + gridAddCart.getChildren().size());
+        gridAddCart.getChildren().clear();
+        System.out.println("Grid children after clear: " + gridAddCart.getChildren().size());
+
         gridAddCart.getRowConstraints().clear();
+
+        System.out.println("CartContent cleared. Updating cart UI with " + cartModel.size() + " items.");
 
         int column = 0;
         int row = 0;
@@ -247,30 +259,21 @@ public class orderCont implements Initializable {
                 cartController.setData(cartItem);
 
                 Button removeBTN = cartController.getRemoveBTN();
-
-                removeBTN.setOnAction(new EventHandler<ActionEvent>() {
-
-                    @Override
-                    public void handle(ActionEvent event) {
-                        removeItemFromCart(cartItem);
-                    }
-                });
+                removeBTN.setOnAction(event -> removeItemFromCart(cartItem));
 
                 gridAddCart.add(cartItemPane, column, row);
                 GridPane.setMargin(cartItemPane, new Insets(10));
 
                 if (column == 0) {
                     row++;
-                } else {
-                    column = 0;
-                    row++;
                 }
-
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
+        cartContent.requestLayout();
+        gridAddCart.requestLayout();
     }
 
     @FXML
