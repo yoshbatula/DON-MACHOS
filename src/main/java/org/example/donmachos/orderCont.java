@@ -1,5 +1,6 @@
 package org.example.donmachos;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -193,18 +195,6 @@ public class orderCont implements Initializable {
         return null;
     }
 
-    public void switchForm(ActionEvent event) throws IOException {
-
-        if (event.getSource() == homeBTN) {
-            Stage stage = new Stage();
-            FXMLLoader fxmlloader = new FXMLLoader(getClass().getResource("HOMEINTERFACE.fxml"));
-            Scene scene = new Scene(fxmlloader.load());
-            stage.setTitle("HOME PAGE");
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
-
     private void updateSubtotalAndTotal() {
         double subtotalAmount = 0;
         double totalAmount = 0;
@@ -318,15 +308,25 @@ public class orderCont implements Initializable {
 
 
     public void orderSwitch(ActionEvent event) throws IOException {
-        if (event.getSource() == cartOrderBTN) {
+        if (event.getSource() == cartOrderBTN) { // Check if the source is "Add to Cart" button
             parentContainer.getChildren().clear();
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ORDERING.fxml"));
-            AnchorPane pane = fxmlLoader.load();
+            AnchorPane cartPane = fxmlLoader.load();
 
-            parentContainer.getChildren().add(pane);
+            parentContainer.getChildren().add(cartPane);
+
+            // Add a smooth fade-in effect
+            FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), cartPane);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
+
+            parentContainer.requestLayout();
         }
     }
+
+
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
         cart carts;

@@ -6,13 +6,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1080.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.HOMECONTROLLER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="1077.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.HOMECONTROLLER">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="-13.0" prefHeight="685.0" prefWidth="1096.0" vbarPolicy="NEVER">
+      <ScrollPane hbarPolicy="NEVER" layoutX="-9.0" layoutY="-168.0" prefHeight="686.0" prefWidth="1096.0" vbarPolicy="NEVER">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1613.0" prefWidth="1099.0">
                <children>
@@ -46,7 +45,6 @@
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
-                  <Button mnemonicParsing="false" text="Button" />
                   <Button fx:id="ordernowBTN" layoutX="68.0" layoutY="581.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="36.0" prefWidth="156.0" style="-fx-background-color: #90571C; -fx-background-radius: 5;" styleClass="btm" stylesheets="@CSS/responsive.css" text="ORDER NOW" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="15.0" />
@@ -121,84 +119,5 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="114.0" stroke="BLACK" strokeType="INSIDE" width="1084.0" />
-      <Label layoutX="111.0" layoutY="24.0" prefHeight="37.0" prefWidth="70.0" text="DON " textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Black" size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="111.0" layoutY="50.0" prefHeight="38.0" prefWidth="126.0" text="MACHOS" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Black" size="22.0" />
-         </font>
-      </Label>
-      <Circle fill="WHITE" layoutX="66.0" layoutY="57.0" radius="35.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label layoutX="322.0" layoutY="38.0" prefHeight="38.0" prefWidth="175.0" text="09123456789" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="11.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="284.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Label layoutX="490.0" layoutY="38.0" prefHeight="38.0" prefWidth="254.0" text="DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="10.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="452.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Label layoutX="701.0" layoutY="38.0" prefHeight="38.0" prefWidth="254.0" text="DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="10.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="663.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="904.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="951.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="995.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="57.0" layoutX="-7.0" layoutY="113.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1087.0" />
-      <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="455.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/location-pin.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="899.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/instagram.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="953.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/facebook.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="997.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/youtube.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="homeBTN" layoutX="40.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="HOME">
-         <font>
-            <Font name="Arial Black" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="menuBTN" layoutX="149.0" layoutY="129.0" mnemonicParsing="false" onAction="#switchForm" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="MENU">
-         <font>
-            <Font name="Arial Black" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="ordersBTN" layoutX="248.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="ORDER">
-         <font>
-            <Font name="Arial Black" size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="ordersBTN1" layoutX="348.0" layoutY="129.0" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="REVIEW">
-         <font>
-            <Font name="Arial Black" size="14.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="82.0" fitWidth="81.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/logo%20don%20machos%201.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
