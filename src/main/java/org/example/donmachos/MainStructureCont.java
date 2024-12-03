@@ -34,6 +34,9 @@ public class MainStructureCont implements Initializable {
     @FXML
     private Button ordersBTN1;
 
+    @FXML
+    private Button orderNOWBTN;
+
 
     public void switchForm(ActionEvent event) throws IOException {
         if (event.getSource() == menuBTN) {
@@ -43,6 +46,15 @@ public class MainStructureCont implements Initializable {
             AnchorPane pane = fxmlLoader.load();
 
             contentpane.getChildren().add(pane);
+        } else if (event.getSource() == ordersBTN) {
+            contentpane.getChildren().clear();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Orders.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+
+            contentpane.getChildren().add(pane);
+
         }
+
+
     }
 }

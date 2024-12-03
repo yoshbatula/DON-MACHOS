@@ -300,6 +300,14 @@ public class orderCont implements Initializable {
     @FXML
     private VBox cartContent;
 
+    @FXML
+    private AnchorPane menuContainer;
+
+    @FXML
+    private AnchorPane parentContainer;
+
+
+
     private String temperature = "Hot";
 
     private int basePrice = 39;
@@ -308,6 +316,17 @@ public class orderCont implements Initializable {
 
     private String selectedSize = "Small";
 
+
+    public void orderSwitch(ActionEvent event) throws IOException {
+        if (event.getSource() == cartOrderBTN) {
+            parentContainer.getChildren().clear();
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ORDERING.fxml"));
+            AnchorPane pane = fxmlLoader.load();
+
+            parentContainer.getChildren().add(pane);
+        }
+    }
     private List<cart> getData() {
         List<cart> carlist = new ArrayList<>();
         cart carts;
