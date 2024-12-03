@@ -17,11 +17,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Line endX="752.0" endY="-1.9999847412109375" layoutX="263.0" layoutY="148.0" startX="-167.0" startY="-1.9999847412109375" stroke="#d7d7d7" />
         <Circle fill="#d7d7d7" layoutX="95.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-        <Label layoutX="27.0" layoutY="77.0" prefHeight="38.0" prefWidth="101.0" text="MY ORDER" textFill="#050505" wrapText="true">
+        <Label layoutX="37.0" layoutY="77.0" prefHeight="38.0" prefWidth="101.0" text="MY ORDER" textFill="#050505" wrapText="true">
             <font>
                 <Font name="Arial Bold" size="18.0" />
             </font>
@@ -31,9 +31,9 @@
                 <Font name="Arial Bold" size="22.0" />
             </font>
         </Label>
-        <Circle fill="#90571c" layoutX="96.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d7d7d7" height="329.0" layoutX="37.0" layoutY="171.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1008.0" />
-        <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="91.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+        <Circle fill="#90571c" layoutX="95.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d7d7d7" height="528.0" layoutX="37.0" layoutY="171.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1008.0" />
+        <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="90.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/Mask%20group.png" />
             </image>
@@ -79,7 +79,7 @@
                 <Font name="Arial Black" size="12.0" />
             </font>
         </Text>
-        <Button fx:id="cartOrderBTN" layoutX="448.0" layoutY="456.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
+        <Button fx:id="cartOrderBTN" layoutX="448.0" layoutY="648.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
@@ -92,5 +92,62 @@
         <Circle fill="#d7d7d7" layoutX="705.0" layoutY="148.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
         <Circle fill="#d7d7d7" layoutX="1006.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
         <Circle fill="#d7d7d7" layoutX="398.0" layoutY="147.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="160.0" layoutX="181.0" layoutY="474.0" stroke="WHITE" strokeType="INSIDE" width="750.0" />
+      <Line endX="196.19998168945312" endY="1.500030517578125" layoutX="195.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
+      <Circle fill="#90571c" layoutX="398.0" layoutY="147.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#90571c" layoutX="1006.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#90571c" layoutX="705.0" layoutY="148.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Line endX="201.86669921875" endY="1.500030517578125" layoutX="488.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
+      <Line endX="196.19998168945312" endY="1.500030517578125" layoutX="796.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
+      <Label layoutX="470.0" layoutY="484.0" text="DELIVERY ADDRESS">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="230.0" layoutY="522.0" text="Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="558.0" text="City:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="604.0" layoutY="522.0" text="Address:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="604.0" layoutY="558.0" text="Phone:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="379.0" layoutY="596.0" text="Payment Method:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Text layoutX="268.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="311.9999633789064" />
+      <Text layoutX="259.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="335.9999633789064" />
+      <Text layoutX="655.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.19997558593764" />
+      <Text layoutX="645.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
+      <Text layoutX="496.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
+      <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="394.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Mask%20group.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="1002.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Mask%20group.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="701.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Mask%20group.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

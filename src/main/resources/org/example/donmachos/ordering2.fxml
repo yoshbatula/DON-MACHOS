@@ -28,9 +28,9 @@
         </Label>
         <Circle fill="#d7d7d7" layoutX="695.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
         <Circle fill="#d7d7d7" layoutX="996.0" layoutY="144.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-        <Circle fill="#90571c" layoutX="96.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+        <Circle fill="#90571c" layoutX="95.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
         <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d7d7d7" height="329.0" layoutX="37.0" layoutY="171.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1008.0" />
-        <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="91.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="90.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/Mask%20group.png" />
             </image>
