@@ -252,9 +252,6 @@ public class orderCont implements Initializable {
                 addtocartcont cartController = fxmlLoader.getController();
                 cartController.setData(cartItem);
 
-                Button removeBTN = cartController.getRemoveBTN();
-                removeBTN.setOnAction(event -> removeItemFromCart(cartItem));
-
                 cartOrderBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
@@ -265,7 +262,7 @@ public class orderCont implements Initializable {
                                 AnchorPane summaryPane = fxmlLoader.load();
 
                                 summaryController controller = fxmlLoader.getController();
-                                controller.setData(getSubtotal(), getTotal(), cartModel);
+                                controller.setData(getSubtotal(), getTotal(), cartModel, cartItem);
 
                                 parentContainer.getChildren().clear();
                                 parentContainer.getChildren().add(summaryPane);
@@ -288,6 +285,9 @@ public class orderCont implements Initializable {
                         }
                     }
                 });
+
+                Button removeBTN = cartController.getRemoveBTN();
+                removeBTN.setOnAction(event -> removeItemFromCart(cartItem));
 
 
                 gridAddCart.add(cartItemPane, column, row);

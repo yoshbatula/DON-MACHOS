@@ -51,18 +51,23 @@ public class summaryController {
         this.cartModel = cartModel;
         this.cartItem = cartItem;
 
+
+        if (imgCart == null) {
+            System.out.println("imgCart is null! Check FXML file and fx:id bindings.");
+            return;
+        }
+
         Image image = new Image(getClass().getResourceAsStream(cartItem.getImage()));
         imgCart.setImage(image);
         cartCoffeName.setText(cartItem.getCoffeNames());
         moodCart.setText(cartItem.getMood());
-        priceCart.setText(String.valueOf(cartItem.getPrice()));
+        priceCart.setText(String.format("₱%.2f", cartItem.getPrice()));
         quantityCart.setText(String.valueOf(cartItem.getQuantity()));
-        sizeCart.setText(String.valueOf(cartItem.getSize()));
-        subtotaltext.setText("₱" + String.format("%.2f", subtotal));
-        totalText.setText("₱" + String.format("%.2f", total));
+        sizeCart.setText(cartItem.getSize());
+        subtotaltext.setText(String.format("₱%.2f", subtotal));
+        totalText.setText(String.format("₱%.2f", total));
 
         updateOrderSummaryUI();
-
     }
 
 
