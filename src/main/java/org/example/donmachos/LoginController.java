@@ -65,8 +65,6 @@ public class LoginController {
         String password = passwordPF.getText();
         String username = userTF.getText();
 
-        user = new User(emailAddress, username, password);
-
         if (EmailTF.getText().isBlank() || userTF.getText().isBlank() || passwordPF.getText().isBlank()) {
 
             EmailTF.setStyle("-fx-border-color: red; -fx-border-radius: 9px; -fx-font-family: 'Palatino Linotype'");

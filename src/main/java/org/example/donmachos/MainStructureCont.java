@@ -64,10 +64,6 @@ public class MainStructureCont implements Initializable {
                 case "MENU":
                     pane = loadFXML("MENU.fxml");
                     break;
-                case "ORDERING":
-                    pane = loadFXML("ORDERING.fxml");
-                    break;
-
                 default:
                     throw new IllegalArgumentException("Unknown view: " + viewName);
             }
@@ -98,12 +94,6 @@ public class MainStructureCont implements Initializable {
             switchToView("MENU");
         } else if (event.getSource() == homeBTN) {
             switchToView("HOMEINTERFACE");
-        } else if (event.getSource() == ordersBTN) {
-            switchToView("ORDERING");
-        } else if (event.getSource() == ordersBTN1) {
-            switchToView("ORDERING");
-        } else if (event.getSource() == hc.getOrdernowBTN()) {
-            switchToView("ORDERING");
         }
     }
 }

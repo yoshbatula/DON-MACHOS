@@ -5,11 +5,6 @@ package org.example.donmachos;
      private String Username;
      private String Password;
 
-     public User(String emailAddress, String username, String password) {
-         EmailAddress = emailAddress;
-         Username = username;
-         Password = password;
-     }
 
      public String getEmailAddress() {
          return EmailAddress;

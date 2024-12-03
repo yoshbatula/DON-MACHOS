@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.summaryCont">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.summaryController">
    <children>
       <Line endX="752.0" endY="-1.9999847412109375" layoutX="263.0" layoutY="148.0" startX="-167.0" startY="-1.9999847412109375" stroke="#d7d7d7" />
       <Circle fill="#d7d7d7" layoutX="95.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
@@ -72,7 +72,7 @@
             <Font name="Arial Black" size="12.0" />
          </font>
       </Text>
-      <Button fx:id="cartOrderBTN" layoutX="448.0" layoutY="456.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
+      <Button fx:id="proceedBTN" layoutX="448.0" layoutY="456.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="12.0" />
          </font>

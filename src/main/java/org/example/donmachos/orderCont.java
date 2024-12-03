@@ -8,12 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -169,6 +171,8 @@ public class orderCont implements Initializable {
                     }
                 });
 
+
+
                 GridPane.setMargin(pane, new Insets(10));
                 grid.add(pane, column++, row);
 
@@ -251,6 +255,40 @@ public class orderCont implements Initializable {
                 Button removeBTN = cartController.getRemoveBTN();
                 removeBTN.setOnAction(event -> removeItemFromCart(cartItem));
 
+                cartOrderBTN.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        System.out.println(cartModel.size());
+                        if (!cartModel.isEmpty()) {
+                            try {
+
+                                FXMLLoader fxmlLoader = new FXMLLoader();
+                                fxmlLoader.setLocation(getClass().getResource("ORDERING.fxml"));
+                                AnchorPane orderingPane = fxmlLoader.load();
+
+                                parentContainer.getChildren().clear();
+                                parentContainer.getChildren().add(orderingPane);
+
+                                AnchorPane.setTopAnchor(orderingPane, 0.0);
+                                AnchorPane.setRightAnchor(orderingPane, 0.0);
+                                AnchorPane.setBottomAnchor(orderingPane, 0.0);
+                                AnchorPane.setLeftAnchor(orderingPane, 0.0);
+
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                throw new RuntimeException("Failed to load ORDERING.fxml", e);
+                            }
+                        } else {
+                            alert.setAlertType(Alert.AlertType.ERROR);
+                            alert.setTitle("CART IS EMPTY");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Cart is empty");
+                            alert.show();
+                        }
+
+                    }
+                });
+
                 gridAddCart.add(cartItemPane, column, row);
                 GridPane.setMargin(cartItemPane, new Insets(10));
 
@@ -266,8 +304,13 @@ public class orderCont implements Initializable {
         gridAddCart.requestLayout();
     }
 
+    private Alert alert;
+
     @FXML
     private Button cartOrderBTN;
+
+    @FXML
+    private GridPane orderSumarryGrid;
 
     @FXML
     private Button homeBTN;
@@ -305,26 +348,6 @@ public class orderCont implements Initializable {
     private int quantity = 1;
 
     private String selectedSize = "Small";
-
-
-    public void orderSwitch(ActionEvent event) throws IOException {
-        if (event.getSource() == cartOrderBTN) {
-            parentContainer.getChildren().clear();
-
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ORDERING.fxml"));
-            AnchorPane cartPane = fxmlLoader.load();
-
-            parentContainer.getChildren().add(cartPane);
-
-
-            FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), cartPane);
-            fadeTransition.setFromValue(0.0);
-            fadeTransition.setToValue(1.0);
-            fadeTransition.play();
-
-            parentContainer.requestLayout();
-        }
-    }
 
 
     private List<cart> getData() {
