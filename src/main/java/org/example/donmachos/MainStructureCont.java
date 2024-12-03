@@ -9,6 +9,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
+import javafx.animation.ScaleTransition;
 import javafx.util.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,13 +20,10 @@ import java.util.ResourceBundle;
 
 public class MainStructureCont implements Initializable {
 
-    // Removed the Map to always reload the views fresh each time
-    // private final Map<String, AnchorPane> loadedViews = new HashMap<>();
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            // Initially loading the default view
+            // Initial view setup (first view to load)
             switchToView("HOMEINTERFACE");
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -55,7 +54,8 @@ public class MainStructureCont implements Initializable {
     @FXML
     private Button orderNOWBTN;
 
-    // A method to switch views
+    HOMECONTROLLER hc = new HOMECONTROLLER();
+
     private void switchToView(String viewName) {
         AnchorPane pane = null;
         try {
@@ -69,21 +69,25 @@ public class MainStructureCont implements Initializable {
                 case "ORDERING":
                     pane = loadFXML("ORDERING.fxml");
                     break;
-                // Add other cases if necessary for other views
+
                 default:
                     throw new IllegalArgumentException("Unknown view: " + viewName);
             }
 
-            // If the pane was successfully loaded, clear the content and add the new view
             if (pane != null) {
                 contentpane.getChildren().clear();
                 contentpane.getChildren().add(pane);
 
-                // Apply fade transition for smooth switching
                 FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), pane);
                 fadeTransition.setFromValue(0.0);
                 fadeTransition.setToValue(1.0);
+
+                TranslateTransition slideTransition = new TranslateTransition(Duration.millis(500), pane);
+                slideTransition.setFromX(contentpane.getWidth());
+                slideTransition.setToX(0);
+
                 fadeTransition.play();
+
             }
 
         } catch (IOException e) {
@@ -91,15 +95,17 @@ public class MainStructureCont implements Initializable {
         }
     }
 
-    // Switches to a different view based on which button is pressed
     public void switchForm(ActionEvent event) {
         if (event.getSource() == menuBTN) {
-            switchToView("MENU"); // Switches to the "MENU" view
+            switchToView("MENU");
         } else if (event.getSource() == homeBTN) {
-            switchToView("HOMEINTERFACE"); // Switches to the "HOMEINTERFACE" view
+            switchToView("HOMEINTERFACE");
         } else if (event.getSource() == ordersBTN) {
-            switchToView("ORDERING"); // Switches to the "ORDERING" view
-
+            switchToView("ORDERING");
+        } else if (event.getSource() == ordersBTN1) {
+            switchToView("ORDERING");
+        } else if (event.getSource() == hc.getOrdernowBTN()) {
+            switchToView("ORDERING");
         }
     }
 }
