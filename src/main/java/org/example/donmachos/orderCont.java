@@ -258,25 +258,26 @@ public class orderCont implements Initializable {
                 cartOrderBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        System.out.println(cartModel.size());
                         if (!cartModel.isEmpty()) {
                             try {
-
                                 FXMLLoader fxmlLoader = new FXMLLoader();
                                 fxmlLoader.setLocation(getClass().getResource("ORDERING.fxml"));
-                                AnchorPane orderingPane = fxmlLoader.load();
+                                AnchorPane summaryPane = fxmlLoader.load();
+
+                                summaryController controller = fxmlLoader.getController();
+                                controller.setData(getSubtotal(), getTotal(), cartModel);
 
                                 parentContainer.getChildren().clear();
-                                parentContainer.getChildren().add(orderingPane);
+                                parentContainer.getChildren().add(summaryPane);
 
-                                AnchorPane.setTopAnchor(orderingPane, 0.0);
-                                AnchorPane.setRightAnchor(orderingPane, 0.0);
-                                AnchorPane.setBottomAnchor(orderingPane, 0.0);
-                                AnchorPane.setLeftAnchor(orderingPane, 0.0);
+                                AnchorPane.setTopAnchor(summaryPane, 0.0);
+                                AnchorPane.setRightAnchor(summaryPane, 0.0);
+                                AnchorPane.setBottomAnchor(summaryPane, 0.0);
+                                AnchorPane.setLeftAnchor(summaryPane, 0.0);
 
                             } catch (IOException e) {
                                 e.printStackTrace();
-                                throw new RuntimeException("Failed to load ORDERING.fxml", e);
+                                throw new RuntimeException("Failed to load summary.fxml", e);
                             }
                         } else {
                             alert.setAlertType(Alert.AlertType.ERROR);
@@ -285,9 +286,9 @@ public class orderCont implements Initializable {
                             alert.setContentText("Cart is empty");
                             alert.show();
                         }
-
                     }
                 });
+
 
                 gridAddCart.add(cartItemPane, column, row);
                 GridPane.setMargin(cartItemPane, new Insets(10));
@@ -304,6 +305,18 @@ public class orderCont implements Initializable {
         gridAddCart.requestLayout();
     }
 
+    private double getSubtotal() {
+        double subtotal = 0;
+        for (cartItems item : cartModel) {
+            subtotal += item.getPrice();
+        }
+        return subtotal;
+    }
+
+    private double getTotal() {
+
+        return getSubtotal();
+    }
     private Alert alert;
 
     @FXML
