@@ -17,13 +17,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1482.0" prefWidth="1084.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.orderCont">
+<AnchorPane fx:id="parentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1335.0" prefWidth="1084.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.orderCont">
     <children>
-        <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="-2.0" layoutY="166.0" prefHeight="1318.0" prefWidth="1086.0" vbarPolicy="NEVER">
+        <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="-2.0" layoutY="79.0" prefHeight="1257.0" prefWidth="1086.0" vbarPolicy="NEVER">
             <content>
-                <AnchorPane fx:id="menuContainer" minHeight="0.0" minWidth="0.0" prefHeight="1291.0" prefWidth="1084.0">
+                <AnchorPane fx:id="menuContainer" minHeight="0.0" minWidth="0.0" prefHeight="1375.0" prefWidth="1084.0">
                     <children>
-                        <AnchorPane layoutX="1.0" layoutY="360.0" prefHeight="932.0" prefWidth="1094.0">
+                        <AnchorPane layoutX="1.0" layoutY="360.0" prefHeight="896.0" prefWidth="1094.0">
                             <children>
                                 <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="615.0" layoutY="-90.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1080.0" />
                                 <Label layoutX="548.0" layoutY="434.0" prefHeight="22.0" prefWidth="401.0">
@@ -39,32 +39,22 @@
                      </font>
                   </Label>
                   <TextField layoutX="271.0" layoutY="79.0" prefHeight="32.0" prefWidth="231.0" promptText="Search category or menu..." style="-fx-background-color: #f2f2f2;" />
-                  <Button layoutX="438.0" layoutY="237.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: transparent;">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="83.0" layoutY="130.0" mnemonicParsing="false" style="-fx-background-color: #90571C; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="Best Seller" textFill="WHITE">
+                  <Button layoutX="73.0" layoutY="129.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="Best Seller">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="216.0" layoutY="131.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="New">
+                  <Button layoutX="74.0" layoutY="130.0" mnemonicParsing="false" style="-fx-background-color: #90571C; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="Best Seller" textFill="WHITE">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="357.0" layoutY="132.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="Favorites">
+                  <Button layoutX="201.0" layoutY="129.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="All">
                      <font>
                         <Font name="Arial Black" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="501.0" layoutY="134.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="btnShadows" stylesheets="@CSS/responsive.css" text="All">
-                     <font>
-                        <Font name="Arial Black" size="14.0" />
-                     </font>
-                  </Button>
-                  <Label layoutX="80.0" layoutY="215.0" prefHeight="38.0" prefWidth="101.0" text="Best Seller" textFill="#050505" wrapText="true">
+                  <Label layoutX="80.0" layoutY="194.0" prefHeight="38.0" prefWidth="101.0" text="Best Seller" textFill="#050505" wrapText="true">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -93,41 +83,27 @@
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <Text layoutX="16.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal">
+                              <Text layoutX="16.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal">
                                  <font>
                                     <Font name="Arial Black" size="12.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="subtotaltext" layoutX="218.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.39999999999998">
+                              <Text fx:id="subtotaltext" layoutX="218.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.39999999999998">
                                  <font>
                                     <Font name="Arial Black" size="12.0" />
                                  </font>
                               </Text>
-                              <Line endX="187.39996337890625" layoutX="115.0" layoutY="303.0" startX="-100.0" />
-                              <Text layoutX="16.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                              <Line endX="187.39996337890625" layoutX="115.0" layoutY="371.0" startX="-100.0" />
+                              <Text layoutX="16.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
                                  <font>
                                     <Font name="Arial Black" size="12.0" />
                                  </font>
                               </Text>
-                              <Text fx:id="totalText" layoutX="218.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="87.99997558593753">
+                              <Text fx:id="totalText" layoutX="218.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="87.99997558593753">
                                  <font>
                                     <Font name="Arial Black" size="12.0" />
                                  </font>
                               </Text>
-                              <Label layoutX="14.0" layoutY="334.0" prefHeight="38.0" prefWidth="126.0" text="Payment Method" textFill="#050505" wrapText="true">
-                                 <font>
-                                    <Font name="Arial Bold" size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button layoutX="33.0" layoutY="379.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="39.0" wrapText="true">
-                                 <graphic>
-                                    <ImageView fitHeight="20.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/money.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
                               <Button fx:id="cartOrderBTN" layoutX="67.0" layoutY="424.0" mnemonicParsing="false" onAction="#orderSwitch" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="ORDER" textFill="WHITE">
                                  <font>
                                     <Font name="Arial Bold" size="12.0" />
@@ -135,9 +111,9 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <ScrollPane fx:id="cartScrollPane" hbarPolicy="NEVER" layoutX="6.0" layoutY="39.0" pannable="true" prefHeight="230.0" prefWidth="312.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                        <ScrollPane fx:id="cartScrollPane" hbarPolicy="NEVER" layoutX="6.0" layoutY="39.0" pannable="true" prefHeight="287.0" prefWidth="312.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
                            <content>
-                              <HBox prefHeight="218.0" prefWidth="311.0">
+                              <HBox prefHeight="286.0" prefWidth="311.0">
                                  <children>
                                     <GridPane fx:id="gridAddCart" prefHeight="202.0" prefWidth="311.0">
                                        <rowConstraints>
@@ -156,11 +132,16 @@
                         <Image url="@images/search-interface-symbol.png" />
                      </image>
                   </ImageView>
+                  <Label layoutX="591.0" layoutY="196.0" prefHeight="38.0" prefWidth="101.0" text="6 Results" textFill="#b5b5b5" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
             </content>
         </ScrollPane>
-            <Label layoutX="375.0" layoutY="87.0" prefHeight="38.0" prefWidth="342.0" text="WELCOME TO DON MACHOS" textFill="#050505" wrapText="true">
+            <Label layoutX="371.0" layoutY="34.0" prefHeight="38.0" prefWidth="342.0" text="WELCOME TO DON MACHOS" textFill="#050505" wrapText="true">
                 <font>
                     <Font name="Arial Bold" size="22.0" />
                 </font>
