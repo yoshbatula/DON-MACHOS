@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
@@ -42,16 +41,10 @@
          <content>
             <HBox prefHeight="170.0" prefWidth="983.0">
                <children>
-                  <GridPane prefHeight="222.0" prefWidth="492.0">
+                  <GridPane fx:id="orderSumarryGrid">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints />
-                        <RowConstraints />
-                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                     </rowConstraints>
                   </GridPane>
                   <VBox prefHeight="222.0" prefWidth="497.0" />
                </children>
