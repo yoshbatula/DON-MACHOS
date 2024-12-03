@@ -341,6 +341,20 @@ public class orderCont implements Initializable {
             carts.setCoffeDescription("Matcha, strawberry extract syrup, chilled milk.");
             carts.setBestSeller(true);
             carlist.add(carts);
+
+            carts = new cart();
+            carts.setImage("images/9 5.png");
+            carts.setCoffeName("DONYA BERRY");
+            carts.setCoffeDescription("Real strawberry fruit, chilled milk, strawberry syrup.");
+            carts.setBestSeller(true);
+            carlist.add(carts);
+
+            carts = new cart();
+            carts.setImage("images/10 3.png");
+            carts.setCoffeName("BLACK FOREST");
+            carts.setCoffeDescription("Dark chocolate, strawberry syrup, milk.");
+            carts.setBestSeller(true);
+            carlist.add(carts);
         }
 
         return carlist;
