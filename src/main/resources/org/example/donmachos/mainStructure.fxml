@@ -82,7 +82,7 @@
         </ImageView>
       <HBox layoutX="40.0" layoutY="129.0" spacing="20.0">
          <children>
-              <Button fx:id="homeBTN" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="HOME">
+              <Button fx:id="homeBTN" mnemonicParsing="false" onAction="#switchForm" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="HOME">
                   <font>
                       <Font name="Arial Black" size="14.0" />
                   </font>
