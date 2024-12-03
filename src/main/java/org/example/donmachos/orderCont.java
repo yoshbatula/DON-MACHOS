@@ -308,7 +308,7 @@ public class orderCont implements Initializable {
 
 
     public void orderSwitch(ActionEvent event) throws IOException {
-        if (event.getSource() == cartOrderBTN) { // Check if the source is "Add to Cart" button
+        if (event.getSource() == cartOrderBTN) {
             parentContainer.getChildren().clear();
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ORDERING.fxml"));
@@ -316,7 +316,7 @@ public class orderCont implements Initializable {
 
             parentContainer.getChildren().add(cartPane);
 
-            // Add a smooth fade-in effect
+
             FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), cartPane);
             fadeTransition.setFromValue(0.0);
             fadeTransition.setToValue(1.0);

@@ -23,14 +23,12 @@ public class MainStructureCont implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            // Initial view setup (first view to load)
             switchToView("HOMEINTERFACE");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    // A method to load an FXML file and return its corresponding AnchorPane
     private AnchorPane loadFXML(String fxmlFileName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFileName));
         return fxmlLoader.load();
