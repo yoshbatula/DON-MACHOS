@@ -61,10 +61,9 @@ public class MainStructureCont implements Initializable {
     private Label usernameLabel;
 
 
+    @FXML
+    private AnchorPane hamburgerContainer;
 
-
-
-    HOMECONTROLLER hc = new HOMECONTROLLER();
 
     private void switchToView(String viewName) {
         AnchorPane pane = null;
