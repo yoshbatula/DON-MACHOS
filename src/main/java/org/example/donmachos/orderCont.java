@@ -12,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -257,27 +258,23 @@ public class orderCont implements Initializable {
                     public void handle(ActionEvent event) {
                         if (!cartModel.isEmpty()) {
                             try {
-                                FXMLLoader fxmlLoader = new FXMLLoader();
-                                fxmlLoader.setLocation(getClass().getResource("ORDERING.fxml"));
-                                AnchorPane summaryPane = fxmlLoader.load();
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("ORDERING.fxml"));
+                                
+                                AnchorPane summaryPane = loader.load();
 
-                                summaryController controller = fxmlLoader.getController();
+                                summaryController controller = loader.getController();
                                 controller.setData(getSubtotal(), getTotal(), cartModel, cartItem);
 
-                                parentContainer.getChildren().clear();
-                                parentContainer.getChildren().add(summaryPane);
-
-                                AnchorPane.setTopAnchor(summaryPane, 0.0);
-                                AnchorPane.setRightAnchor(summaryPane, 0.0);
-                                AnchorPane.setBottomAnchor(summaryPane, 0.0);
-                                AnchorPane.setLeftAnchor(summaryPane, 0.0);
+                                Stage stage = new Stage();
+                                stage.setScene(new Scene(summaryPane));
+                                stage.show();
 
                             } catch (IOException e) {
                                 e.printStackTrace();
                                 throw new RuntimeException("Failed to load summary.fxml", e);
                             }
                         } else {
-                            alert.setAlertType(Alert.AlertType.ERROR);
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setTitle("CART IS EMPTY");
                             alert.setHeaderText(null);
                             alert.setContentText("Cart is empty");

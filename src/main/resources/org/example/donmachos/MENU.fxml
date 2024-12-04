@@ -141,10 +141,10 @@
                 </AnchorPane>
             </content>
         </ScrollPane>
-            <Label layoutX="371.0" layoutY="34.0" prefHeight="38.0" prefWidth="342.0" text="WELCOME TO DON MACHOS" textFill="#050505" wrapText="true">
-                <font>
-                    <Font name="Arial Bold" size="22.0" />
-                </font>
-            </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="36.0" prefHeight="66.0" prefWidth="507.0" text="DON MACHOS MENU" textAlignment="CENTER" textFill="#050505" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="43.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

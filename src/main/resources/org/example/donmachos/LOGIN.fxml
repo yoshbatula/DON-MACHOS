@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -62,22 +61,20 @@
                   <AnchorPane layoutX="666.0" layoutY="187.0" prefHeight="433.0" prefWidth="379.0" style="-fx-background-color: transparent; -fx-background-radius: 20px;">
                      <children>
                         <TextField fx:id="EmailAddressTF" layoutX="40.0" layoutY="183.0" prefHeight="25.0" prefWidth="303.0" promptText="Email Address" style="-fx-background-radius: 10px;" styleClass="input-text" stylesheets="@CSS/LOGINFORM.css" />
-                        <Button fx:id="signBTN" layoutX="132.0" layoutY="286.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="111.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="SIGN IN" textFill="WHITE">
+                        <Button fx:id="signBTN" layoutX="40.0" layoutY="277.0" mnemonicParsing="false" onAction="#login" prefHeight="32.0" prefWidth="298.0" style="-fx-background-color: #90571C; -fx-background-radius: 5px;" text="SIGN IN" textFill="WHITE">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="Arial Black" size="14.0" />
                            </font>
                         </Button>
                         <Text layoutX="96.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" />
                         <Line endX="59.5" endY="4.5" layoutX="107.0" layoutY="332.0" startX="-31.5" startY="4.5" />
                         <Line endX="51.5" endY="4.5" layoutX="261.0" layoutY="332.0" startX="-50.0" startY="4.5" />
                         <Text layoutX="180.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
-                        <RadioButton fx:id="rememberRBTN" layoutX="40.0" layoutY="259.0" mnemonicParsing="false" text="Remember me" />
                         <Text fill="#90571c" layoutX="106.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back!">
                            <font>
                               <Font name="Palatino Linotype" size="24.0" />
                            </font>
                         </Text>
-                        <Button fx:id="forgotpassBTN" layoutX="231.0" layoutY="254.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Forgot Password?" />
                         <Text fill="#90571c" layoutX="94.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Coffeelover?" />
                         <Button fx:id="createBTN" layoutX="186.0" layoutY="402.0" mnemonicParsing="false" onAction="#switchform" style="-fx-background-color: transparent;" text="Create Account" textFill="#90571c" />
                         <Text layoutX="118.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please login to your account">
@@ -85,8 +82,13 @@
                               <Font size="11.0" />
                            </font>
                         </Text>
-                        <PasswordField fx:id="passPF" layoutX="40.0" layoutY="221.0" prefHeight="26.0" prefWidth="303.0" promptText="Password" style="-fx-background-radius: 10px;" />
+                        <PasswordField fx:id="passPF" layoutX="40.0" layoutY="225.0" prefHeight="26.0" prefWidth="303.0" promptText="Password" style="-fx-background-radius: 10px;" />
                         <Circle fill="WHITE" layoutX="191.0" layoutY="64.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+                        <ImageView fitHeight="97.0" fitWidth="96.0" layoutX="145.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logo%20don%20machos%201.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <Button layoutX="68.0" layoutY="581.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="156.0" style="-fx-background-color: #90571C; -fx-background-radius: 5;" text="READ MORE" textFill="WHITE">
@@ -159,72 +161,70 @@
          </content>
       </ScrollPane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="114.0" stroke="BLACK" strokeType="INSIDE" width="1083.0" />
-      <Label layoutX="111.0" layoutY="24.0" prefHeight="37.0" prefWidth="70.0" text="DON " textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Black" size="22.0" />
-         </font>
-      </Label>
-      <Label layoutX="111.0" layoutY="50.0" prefHeight="38.0" prefWidth="126.0" text="MACHOS" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Black" size="22.0" />
-         </font>
-      </Label>
-      <Circle fill="WHITE" layoutX="66.0" layoutY="57.0" radius="35.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label layoutX="322.0" layoutY="38.0" prefHeight="38.0" prefWidth="175.0" text="09123456789" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="11.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="284.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Label layoutX="490.0" layoutY="38.0" prefHeight="38.0" prefWidth="254.0" text="DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="10.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="452.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Label layoutX="701.0" layoutY="38.0" prefHeight="38.0" prefWidth="254.0" text="DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="10.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="663.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="904.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="951.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="57.0" layoutX="-7.0" layoutY="113.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1087.0" />
       <Label layoutX="50.0" layoutY="124.0" prefHeight="38.0" prefWidth="126.0" text="LOGIN" textFill="#90571c" wrapText="true">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="455.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+      <Label graphicTextGap="3.0" layoutX="112.0" layoutY="22.0" prefHeight="37.0" prefWidth="70.0" text="DON " textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <Label graphicTextGap="3.0" layoutX="113.0" layoutY="53.0" prefHeight="38.0" prefWidth="126.0" text="MACHOS" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="81.0" layoutX="26.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/location-pin.png" />
+            <Image url="@images/logo%20don%20machos%201.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="899.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="881.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/instagram.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="29.0" fitWidth="26.0" layoutX="953.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="929.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/facebook.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="27.0" layoutX="997.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="973.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/youtube.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="4.0" arcWidth="4.0" fill="WHITE" height="30.0" layoutX="995.0" layoutY="42.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
-      <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="997.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="312.0" layoutY="40.0" prefHeight="38.0" prefWidth="96.0" text="09123456789" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="279.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/youtube.png" />
+            <Image url="@images/CALL.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="82.0" fitWidth="81.0" layoutX="25.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <Label layoutX="467.0" layoutY="40.0" prefHeight="38.0" prefWidth="177.0" text=" DAVAO CITY, PHILIPPINES" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="438.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/logo%20don%20machos%201.png" />
+            <Image url="@images/loc.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="713.0" layoutY="39.0" prefHeight="38.0" prefWidth="142.0" text="09:00 AM - 12:00 AM" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="682.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/time.png" />
          </image>
       </ImageView>
    </children>

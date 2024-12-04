@@ -17,4 +17,15 @@ package org.example.donmachos;
      public String getPassword() {
          return Password;
      }
+
+     public void setEmailAddress(String emailAddress) {
+
+         EmailAddress = emailAddress;
+     }
+     public void setUsername(String username) {
+         Username = username;
+     }
+     public void setPassword(String password) {
+         Password = password;
+     }
  }

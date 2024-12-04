@@ -12,6 +12,8 @@ import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.util.Duration;
+import org.example.donmachos.singleton.UserSingleton;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.io.IOException;
@@ -20,10 +22,13 @@ import java.util.ResourceBundle;
 
 public class MainStructureCont implements Initializable {
 
+    private User user;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        UserSingleton userSingleton = UserSingleton.getInstance();
         try {
             switchToView("HOMEINTERFACE");
+            usernameLabel.setText(userSingleton.getUsername());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -51,6 +56,13 @@ public class MainStructureCont implements Initializable {
 
     @FXML
     private Button orderNOWBTN;
+
+    @FXML
+    private Label usernameLabel;
+
+
+
+
 
     HOMECONTROLLER hc = new HOMECONTROLLER();
 

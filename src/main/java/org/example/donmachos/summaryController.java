@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.List;
 
 public class summaryController {
@@ -51,10 +52,8 @@ public class summaryController {
         this.cartModel = cartModel;
         this.cartItem = cartItem;
 
-
         if (imgCart == null) {
-            System.out.println("imgCart is null! Check FXML file and fx:id bindings.");
-            return;
+            System.out.println("IMAGE IS NULL");
         }
 
         Image image = new Image(getClass().getResourceAsStream(cartItem.getImage()));

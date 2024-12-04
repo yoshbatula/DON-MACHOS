@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.example.donmachos.singleton.UserSingleton;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
@@ -56,6 +57,7 @@ public class LoginController {
     private Button signIN;
 
     private User user;
+    private UserSingleton userSingleton;
 
     public void register(ActionEvent event) throws SQLException {
 
@@ -148,6 +150,7 @@ public class LoginController {
     }
 
     public void login(ActionEvent event) {
+        userSingleton = UserSingleton.getInstance();
         DBCONNECTION db = new DBCONNECTION();
 
         try {
@@ -167,11 +170,23 @@ public class LoginController {
                 alert.showAndWait();
 
             } else {
+                String email = EmailAddressTF.getText();
+                String usernameQuery = "SELECT username FROM user WHERE Email = ?";
+                PreparedStatement preparedStatementUsername = db.getConnection().prepareStatement(usernameQuery);
+                preparedStatementUsername.setString(1, email);
+                ResultSet resultUsername = preparedStatementUsername.executeQuery();
+                if (resultUsername.next()) {
+                    String username = resultUsername.getString("Username");
+                    System.out.println("Welcome," + username);
+                    userSingleton.setUsername("Welcome, " + username + "!");
+                }
+
+
                 Stage window = (Stage) signBTN.getScene().getWindow();
                 window.close();
 
                 Stage stage = new Stage();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HOMEINTERFACE.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mainStructure.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 stage.setTitle("HOME INTERFACE");
                 stage.setScene(scene);
