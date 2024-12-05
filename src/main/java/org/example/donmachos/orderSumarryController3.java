@@ -25,6 +25,19 @@ public class orderSumarryController3 {
     private String cod;
     private String debit;
     private String ewallet;
+
+    private double subtotal;
+    private double total;
+
+    public void setData(double subtotal, double total) {
+        this.subtotal = subtotal;
+        this.total = total;
+
+        System.out.println("Subtotal: " + subtotal);
+        System.out.println("Total: " + total);
+    }
+
+
     public void orderSummary3(ActionEvent event) {
        if (event.getSource() == codBTN) {
             cod = "Cash-On-Delivery";
@@ -39,6 +52,10 @@ public class orderSumarryController3 {
            try {
                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering4.fxml"));
                AnchorPane pane = fxmlLoader.load();
+
+               orderSummaryController4 orderSummaryController4 = fxmlLoader.getController();
+
+               orderSummaryController4.setData(subtotal, total);
 
                Stage stage = new Stage();
                stage.setScene(new Scene(pane));
