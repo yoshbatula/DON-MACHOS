@@ -48,7 +48,7 @@
               <Button fx:id="menuBTN" mnemonicParsing="false" onAction="#switchForm" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="MENU">
                   <font>
                       <Font name="Arial Black" size="14.0" />
-                  </font>
+                  </font>Stage stage = new Stage();
               </Button>
               <Button fx:id="ordersBTN" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="ORDER">
                   <font>
@@ -113,9 +113,9 @@
             <Image url="@images/youtube.png" />
          </image>
       </ImageView>
-      <Button layoutX="858.0" layoutY="126.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+      <Button fx:id="hamburgerBTN" layoutX="858.0" layoutY="126.0" mnemonicParsing="false" onAction="#HamburgerSwitch" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ha" fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/menu%202.png" />
                </image>
@@ -124,7 +124,7 @@
       </Button>
       <AnchorPane layoutX="756.0" layoutY="159.0" prefHeight="212.0" prefWidth="322.0">
          <children>
-            <AnchorPane layoutX="-1.0" layoutY="-2.0" prefHeight="212.0" prefWidth="322.0" />
+            <AnchorPane fx:id="hamburgerContainer" layoutX="-1.0" layoutY="-2.0" prefHeight="212.0" prefWidth="322.0" />
          </children>
       </AnchorPane>
     </children>

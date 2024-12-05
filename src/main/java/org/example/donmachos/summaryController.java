@@ -4,13 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-import java.io.IOException;
 import java.util.List;
 
 public class summaryController {
@@ -27,44 +24,16 @@ public class summaryController {
     @FXML
     private Text totalText;
 
-    @FXML
-    private Text cartCoffeName;
-
-    @FXML
-    private ImageView imgCart;
-
-    @FXML
-    private Text moodCart;
-
-    @FXML
-    private Text priceCart;
-
-    @FXML
-    private Text quantityCart;
-
-    @FXML
-    private Text sizeCart;
-
 
     private List<cartItems> cartModel;
     private cartItems cartItem;
-    public void setData(double subtotal, double total, List<cartItems> cartModel, cartItems cartItem) {
-        this.cartModel = cartModel;
-        this.cartItem = cartItem;
 
-        if (imgCart == null) {
-            System.out.println("IMAGE IS NULL");
-        }
+    public void setData(double total,double subtotal) {
+        this.subtotaltext = subtotaltext;
+        this.totalText = totalText;
 
-        Image image = new Image(getClass().getResourceAsStream(cartItem.getImage()));
-        imgCart.setImage(image);
-        cartCoffeName.setText(cartItem.getCoffeNames());
-        moodCart.setText(cartItem.getMood());
-        priceCart.setText(String.format("₱%.2f", cartItem.getPrice()));
-        quantityCart.setText(String.valueOf(cartItem.getQuantity()));
-        sizeCart.setText(cartItem.getSize());
-        subtotaltext.setText(String.format("₱%.2f", subtotal));
-        totalText.setText(String.format("₱%.2f", total));
+        subtotaltext.setText(String.format("₱%.2f",subtotal));
+        totalText.setText(String.format("₱%.2f",total));
 
         updateOrderSummaryUI();
     }
@@ -80,6 +49,9 @@ public class summaryController {
                 FXMLLoader fxmlloader = new FXMLLoader();
                 fxmlloader.setLocation(getClass().getResource("summaryModel.fxml"));
                 AnchorPane pane = fxmlloader.load();
+
+                SummaryModelController controller = fxmlloader.getController();
+                controller.setData(cartModel,cartItem);
 
                 orderSumarryGrid.add(pane, column, row);
                 GridPane.setMargin(pane, new Insets(10));

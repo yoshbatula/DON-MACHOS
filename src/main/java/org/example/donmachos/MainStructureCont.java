@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.animation.ScaleTransition;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.example.donmachos.singleton.UserSingleton;
 
@@ -62,9 +63,38 @@ public class MainStructureCont implements Initializable {
 
 
     @FXML
+    private Button hamburgerBTN;
+
+
+    @FXML
     private AnchorPane hamburgerContainer;
 
 
+    @FXML
+    public void HamburgerSwitch(ActionEvent event) throws IOException {
+        try {
+
+            hamburgerContainer.getChildren().clear();
+
+            FXMLLoader fxmlloader = new FXMLLoader();
+            fxmlloader.setLocation(getClass().getResource("hamburgermenu.fxml"));
+            AnchorPane pane = fxmlloader.load();
+
+            hamburgerContainer.getChildren().add(pane);
+
+            if (hamburgerContainer == null) {
+                System.out.println("hamburgerContainer is null");
+            }
+
+
+//            TranslateTransition slideTransition = new TranslateTransition(Duration.millis(500), pane);
+//            slideTransition.setFromX(-pane.getWidth());
+//            slideTransition.setToX(0);
+//            slideTransition.play();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     private void switchToView(String viewName) {
         AnchorPane pane = null;
         try {
@@ -75,6 +105,7 @@ public class MainStructureCont implements Initializable {
                 case "MENU":
                     pane = loadFXML("MENU.fxml");
                     break;
+
                 default:
                     throw new IllegalArgumentException("Unknown view: " + viewName);
             }
