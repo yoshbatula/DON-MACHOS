@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="65.0" prefWidth="983.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.SummaryModelController">
+<AnchorPane prefHeight="73.0" prefWidth="909.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.SummaryModelController">
     <children>
         <Text fx:id="cartCoffeName" layoutX="91.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARAMEL MACCHIATOS" wrappingWidth="75.990234375">
             <font>
@@ -26,7 +26,7 @@
             <font>
                 <Font name="Arial Black" size="12.0" />
             </font></Text>
-        <Text fx:id="priceCart" layoutX="911.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱39.00">
+        <Text fx:id="priceCart" layoutX="845.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱39.00">
             <font>
                 <Font name="Arial Black" size="14.0" />
             </font>

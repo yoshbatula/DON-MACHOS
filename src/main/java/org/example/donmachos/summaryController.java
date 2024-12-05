@@ -28,16 +28,16 @@ public class summaryController {
     private List<cartItems> cartModel;
     private cartItems cartItem;
 
-    public void setData(double total,double subtotal) {
-        this.subtotaltext = subtotaltext;
-        this.totalText = totalText;
+    public void setData(double subtotal, double total, List<cartItems> cartModel, cartItems cartItem) {
+        this.cartModel = cartModel;
+        this.cartItem = cartItem;
 
-        subtotaltext.setText(String.format("₱%.2f",subtotal));
-        totalText.setText(String.format("₱%.2f",total));
+        subtotaltext.setText(String.format("%.2f", subtotal));
+        totalText.setText(String.format("%.2f", total));
 
         updateOrderSummaryUI();
-    }
 
+    }
 
     private void updateOrderSummaryUI() {
         orderSumarryGrid.getChildren().clear();
@@ -64,4 +64,5 @@ public class summaryController {
             }
         }
     }
+
 }

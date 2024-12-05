@@ -43,4 +43,5 @@ public class SummaryModelController {
         sizeCart.setText(cartItem.getSize());
 
     }
+
 }

@@ -1,5 +1,6 @@
 package org.example.donmachos;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +15,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -255,11 +258,11 @@ public class orderCont implements Initializable {
                         if (!cartModel.isEmpty()) {
                             try {
                                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ORDERING.fxml"));
-                                
                                 AnchorPane summaryPane = loader.load();
 
                                 summaryController controller = loader.getController();
-                                controller.setData(getSubtotal(),getTotal());
+
+                                controller.setData(getSubtotal(), getTotal(),cartModel,cartItem);
 
                                 Stage stage = new Stage();
                                 stage.setScene(new Scene(summaryPane));
@@ -270,7 +273,7 @@ public class orderCont implements Initializable {
                                 throw new RuntimeException("Failed to load summary.fxml", e);
                             }
                         } else {
-                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setAlertType(Alert.AlertType.ERROR);
                             alert.setTitle("CART IS EMPTY");
                             alert.setHeaderText(null);
                             alert.setContentText("Cart is empty");
