@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class orderSummaryController2 {
 
     @FXML
@@ -31,10 +33,13 @@ public class orderSummaryController2 {
     private double subtotal;
     private double total;
 
-    public void setOrder(double subtotal, double total) {
+    private List<cartItems> cartModel;
+    private cartItems cartItem;
+    public void setOrder(double subtotal, double total, List<cartItems> cartModel, cartItems cartItem) {
         this.subtotal = subtotal;
         this.total = total;
-
+        this.cartModel = cartModel;
+        this.cartItem = cartItem;
     }
 
     public void orderSummary(ActionEvent event) {
@@ -60,7 +65,7 @@ public class orderSummaryController2 {
                 AnchorPane pane = fxmlLoader.load();
 
                 orderSumarryController3 controller = fxmlLoader.getController();
-                controller.setData(total,subtotal, order);
+                controller.setData(total,subtotal, order,cartModel,null);
 
                 Stage stage = new Stage();
                 stage.setScene(new Scene(pane));

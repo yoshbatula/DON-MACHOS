@@ -56,7 +56,7 @@ public class summaryController {
             AnchorPane ordering2Pane = fxmlLoader.load();
 
             orderSummaryController2 orderSummaryController2 = fxmlLoader.getController();
-            orderSummaryController2.setOrder(subtotal,total);
+            orderSummaryController2.setOrder(subtotal,total,cartModel,null);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(ordering2Pane));

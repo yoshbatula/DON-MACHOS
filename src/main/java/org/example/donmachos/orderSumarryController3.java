@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class orderSumarryController3 {
 
     @FXML
@@ -27,11 +29,15 @@ public class orderSumarryController3 {
     private double subtotal;
     private double total;
     private orders order;
+    private List<cartItems> cartModel;
+    private cartItems cartItem;
 
-    public void setData(double subtotal, double total, orders order) {
+    public void setData(double subtotal, double total, orders order, List<cartItems> cartModel, cartItems cartItem) {
         this.subtotal = subtotal;
         this.total = total;
         this.order = order;
+        this.cartModel = cartModel;
+        this.cartItem = cartItem;
 
         System.out.println("Subtotal: " + subtotal);
         System.out.println("Total: " + total);
@@ -54,7 +60,7 @@ public class orderSumarryController3 {
                AnchorPane pane = fxmlLoader.load();
 
                orderSummaryController4 controller = fxmlLoader.getController();
-               controller.setData(subtotal, total,order);
+               controller.setData(subtotal, total,order,PaymentMethod,cartModel,null);
 
                Stage stage = new Stage();
                stage.setScene(new Scene(pane));

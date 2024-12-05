@@ -124,7 +124,7 @@
       <Text fx:id="cityText" layoutX="259.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="335.9999633789064" />
       <Text fx:id="addressText" layoutX="655.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.19997558593764" />
       <Text fx:id="cellphoneText" layoutX="645.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
-      <Text fx:id="paymentMethodText" layoutX="496.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
+      <Text fx:id="paymentMethodText" layoutX="489.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
       <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="394.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Mask%20group.png" />
