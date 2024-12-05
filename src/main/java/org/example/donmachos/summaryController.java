@@ -18,8 +18,9 @@ public class summaryController {
     @FXML
     private GridPane orderSumarryGrid;
 
+
     @FXML
-    private Button proceedBTN;
+    private Button proceedBTN1;
 
     @FXML
     private Text subtotaltext;
@@ -50,7 +51,7 @@ public class summaryController {
             stage.setScene(new Scene(ordering2Pane));
             stage.show();
 
-            Stage window = (Stage) proceedBTN.getScene().getWindow();
+            Stage window = (Stage) proceedBTN1.getScene().getWindow();
             window.close();
 
         } catch (Exception e) {

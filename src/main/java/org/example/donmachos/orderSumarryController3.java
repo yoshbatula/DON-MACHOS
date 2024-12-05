@@ -20,18 +20,22 @@ public class orderSumarryController3 {
     private Button eWalletBTN;
 
     @FXML
-    private Button proceedBTN;
+    private Button proceedBTN3;
+
     private String cod;
     private String debit;
     private String ewallet;
     public void orderSummary3(ActionEvent event) {
        if (event.getSource() == codBTN) {
             cod = "Cash-On-Delivery";
+           System.out.println("Cash-On-Delivery");
        } else if (event.getSource() == debitCardBTN) {
             debit = "Debit Card";
+           System.out.println("Debit Card");
        } else if (event.getSource() == eWalletBTN) {
             ewallet = "E-Wallet";
-       } else if (event.getSource() == proceedBTN) {
+           System.out.println("E-Wallet");
+       } else if (event.getSource() == proceedBTN3) {
            try {
                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering4.fxml"));
                AnchorPane pane = fxmlLoader.load();
@@ -40,7 +44,7 @@ public class orderSumarryController3 {
                stage.setScene(new Scene(pane));
                stage.show();
 
-               Stage window = (Stage) proceedBTN.getScene().getWindow();
+               Stage window = (Stage) proceedBTN3.getScene().getWindow();
                window.close();
            } catch (Exception e) {
                throw new RuntimeException(e);

@@ -23,14 +23,16 @@ public class orderSummaryController2 {
     @FXML
     private TextField nameTF;
 
+
     @FXML
-    private Button proceedBTN;
+    private Button proceedBTN2;
+
+    private String name = nameTF.getText();
+    private String address = addressTF.getText();
+    private String city = cityTF.getText();
+    private String cellphone = cellphoneTF.getText();
 
     public void orderSummary(ActionEvent event) {
-        String name = nameTF.getText();
-        String address = addressTF.getText();
-        String city = cityTF.getText();
-        String cellphone = cellphoneTF.getText();
 
         if (name.isEmpty()) {
             nameTF.setStyle("-fx-border-color: red;");
@@ -49,12 +51,28 @@ public class orderSummaryController2 {
                 stage.setScene(new Scene(pane));
                 stage.show();
 
-                Stage window = (Stage) proceedBTN.getScene().getWindow();
+                Stage window = (Stage) proceedBTN2.getScene().getWindow();
                 window.close();
 
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCellphone() {
+        return cellphone;
     }
 }
