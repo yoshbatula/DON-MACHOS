@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import org.controlsfx.control.action.Action;
 
 import java.io.IOException;
 
@@ -29,8 +28,7 @@ public class HOMECONTROLLER {
 
     public void switchForm(ActionEvent event) throws IOException {
 
-        if(event.getSource() == ordersBTN) {
-
+        if (event.getSource() == ordersBTN) {
             Stage window = (Stage) ordersBTN.getScene().getWindow();
             window.close();
 
@@ -42,7 +40,6 @@ public class HOMECONTROLLER {
             stage.show();
 
         } else if (event.getSource() == menuBTN) {
-
             Stage window = (Stage) menuBTN.getScene().getWindow();
             window.close();
 
@@ -53,6 +50,16 @@ public class HOMECONTROLLER {
             stage.setScene(scene);
             stage.show();
 
+        } else if (event.getSource() == ordernowBTN) {
+            Stage window = (Stage) ordernowBTN.getScene().getWindow();
+            window.close();
+
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MENU.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            stage.setTitle("MENU INTERFACE");
+            stage.setScene(scene);
+            stage.show();
         }
     }
 

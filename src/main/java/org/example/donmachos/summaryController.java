@@ -1,5 +1,6 @@
 package org.example.donmachos;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -7,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
 
 import java.util.List;
 
@@ -38,7 +41,22 @@ public class summaryController {
         updateOrderSummaryUI();
     }
 
+    public void switchToAnotherOrder() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordering2.fxml"));
+            AnchorPane ordering2Pane = fxmlLoader.load();
 
+            Stage stage = new Stage();
+            stage.setScene(new Scene(ordering2Pane));
+            stage.show();
+
+            Stage window = (Stage) proceedBTN.getScene().getWindow();
+            window.close();
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
     private void updateOrderSummaryUI() {
         orderSumarryGrid.getChildren().clear();
 

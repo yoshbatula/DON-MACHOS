@@ -34,10 +34,7 @@ public class orderCont implements Initializable {
 
             @Override
             public void handleRemoveFromCart(cartItems cartItem) {
-                System.out.println("ITEM DELETED");
-                cartModel.remove(cartItem);
-                updateSubtotalAndTotal();
-                updateCartUI(cartModel);
+                System.out.println("item deleted");
             }
 
             @Override
@@ -235,6 +232,7 @@ public class orderCont implements Initializable {
         updateCartUI(cartModel);
     }
 
+
     private void updateCartUI(List<cartItems> cartModel) {
         System.out.println("CartContent children before clear: " + cartContent.getChildren().size());
         cartContent.getChildren().clear();
@@ -264,9 +262,9 @@ public class orderCont implements Initializable {
                 removeBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent event) {
-                        cartModel.remove(cartItem);
-                        updateSubtotalAndTotal();
-                        updateCartUI(cartModel);
+                        cartItems cartItemToRemove = cartItem;
+                        removeItemFromCart(cartItemToRemove);
+                        System.out.println("ITEM DELETED");
                     }
                 });
 
@@ -299,7 +297,6 @@ public class orderCont implements Initializable {
                         }
                     }
                 });
-
 
                 gridAddCart.add(cartItemPane, column, row);
                 GridPane.setMargin(cartItemPane, new Insets(10));

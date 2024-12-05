@@ -58,6 +58,8 @@ public class MainStructureCont implements Initializable {
     @FXML
     private Button orderNOWBTN;
 
+
+
     @FXML
     private Label usernameLabel;
 
@@ -136,6 +138,8 @@ public class MainStructureCont implements Initializable {
             switchToView("MENU");
         } else if (event.getSource() == homeBTN) {
             switchToView("HOMEINTERFACE");
+        } else if (event.getSource() == orderNOWBTN) {
+            switchToView("MENU");
         }
     }
 }
