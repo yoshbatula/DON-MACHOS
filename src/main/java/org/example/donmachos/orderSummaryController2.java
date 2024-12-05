@@ -3,8 +3,11 @@ package org.example.donmachos;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class orderSummaryController2 {
 
@@ -40,6 +43,15 @@ public class orderSummaryController2 {
         } else {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering3.fxml"));
+                AnchorPane pane = fxmlLoader.load();
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene(pane));
+                stage.show();
+
+                Stage window = (Stage) proceedBTN.getScene().getWindow();
+                window.close();
+
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

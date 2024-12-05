@@ -30,7 +30,7 @@
                 <Image url="@images/Mask%20group.png" />
             </image>
         </ImageView>
-        <Button fx:id="proceedBTN" layoutX="448.0" layoutY="456.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
+        <Button fx:id="proceedBTN" layoutX="448.0" layoutY="456.0" mnemonicParsing="false" onAction="#orderSummary" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
