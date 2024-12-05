@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.orderSumarryController3">
     <children>
         <Line endX="752.0" endY="-1.9999847412109375" layoutX="253.0" layoutY="146.0" startX="-149.0" startY="-2.0" stroke="#d7d7d7" />
         <Line endX="153.06668090820312" endY="-0.999969482421875" layoutX="245.0" layoutY="145.0" startX="-149.0" startY="-0.9999847412109375" stroke="#90571c" />
