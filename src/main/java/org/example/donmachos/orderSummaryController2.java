@@ -27,12 +27,13 @@ public class orderSummaryController2 {
     @FXML
     private Button proceedBTN2;
 
-    private String name = nameTF.getText();
-    private String address = addressTF.getText();
-    private String city = cityTF.getText();
-    private String cellphone = cellphoneTF.getText();
+    private orders order;
 
     public void orderSummary(ActionEvent event) {
+        String name = nameTF.getText();
+        String address = addressTF.getText();
+        String city = cityTF.getText();
+        String cellphone = cellphoneTF.getText();
 
         if (name.isEmpty()) {
             nameTF.setStyle("-fx-border-color: red;");
@@ -43,6 +44,9 @@ public class orderSummaryController2 {
         } else if (cellphone.isEmpty()) {
             cellphoneTF.setStyle("-fx-border-color: red;");
         } else {
+
+            order = new orders(name, address, city, cellphone);
+
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering3.fxml"));
                 AnchorPane pane = fxmlLoader.load();
@@ -59,20 +63,6 @@ public class orderSummaryController2 {
             }
         }
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getCellphone() {
-        return cellphone;
-    }
 }
+
+
