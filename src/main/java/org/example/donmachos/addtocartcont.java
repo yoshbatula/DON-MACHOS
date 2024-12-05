@@ -32,8 +32,11 @@ public class addtocartcont {
 
     private cartItems cartitems;
 
-    public void setData(cartItems cartitems) {
+    private CartListener cartListener;
+
+    public void setData(cartItems cartitems, CartListener cartListener) {
         this.cartitems = cartitems;
+        this.cartListener = cartListener;
 
         Image image = new Image(getClass().getResourceAsStream(cartitems.getImage()));
         imgCart.setImage(image);
@@ -42,6 +45,12 @@ public class addtocartcont {
         sizeCart.setText(cartitems.getSize());
         quantityCart.setText("Qty: " + cartitems.getQuantity());
         priceCart.setText("₱" + cartitems.getPrice());
+
+        removeBTN.setOnAction(event -> {
+            if (cartListener != null) {
+                cartListener.handleRemoveFromCart(cartitems);
+            }
+        });
     }
 
     public Text getSizeCart() {

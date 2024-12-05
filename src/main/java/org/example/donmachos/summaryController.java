@@ -32,12 +32,12 @@ public class summaryController {
         this.cartModel = cartModel;
         this.cartItem = cartItem;
 
-        subtotaltext.setText(String.format("%.2f", subtotal));
-        totalText.setText(String.format("%.2f", total));
+        subtotaltext.setText(String.format("₱%.2f", subtotal));
+        totalText.setText(String.format("₱%.2f", total));
 
         updateOrderSummaryUI();
-
     }
+
 
     private void updateOrderSummaryUI() {
         orderSumarryGrid.getChildren().clear();
@@ -51,7 +51,7 @@ public class summaryController {
                 AnchorPane pane = fxmlloader.load();
 
                 SummaryModelController controller = fxmlloader.getController();
-                controller.setData(cartModel,cartItem);
+                controller.setData(cartModel, item);
 
                 orderSumarryGrid.add(pane, column, row);
                 GridPane.setMargin(pane, new Insets(10));
@@ -60,7 +60,8 @@ public class summaryController {
                     row++;
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                throw new RuntimeException("Error updating order summary UI.", e);
             }
         }
     }
