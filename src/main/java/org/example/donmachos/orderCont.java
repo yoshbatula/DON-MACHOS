@@ -181,10 +181,6 @@ public class orderCont implements Initializable {
                     }
                 });
 
-
-
-
-
                 GridPane.setMargin(pane, new Insets(10));
                 grid.add(pane, column++, row);
 
@@ -226,6 +222,18 @@ public class orderCont implements Initializable {
         totalText.setText("₱" + String.format("%.2f", totalAmount));
     }
 
+    private void removeItemFromCart(cartItems cartItemToRemove) {
+        System.out.println("Before removal: " + cartModel.size() + " items.");
+        boolean removed = cartModel.removeIf(cartItem -> cartItem.equals(cartItemToRemove));
+        if (removed) {
+            System.out.println("Item removed successfully.");
+        } else {
+            System.out.println("Failed to remove item. Check equality logic.");
+        }
+        System.out.println("After removal: " + cartModel.size() + " items.");
+        updateSubtotalAndTotal();
+        updateCartUI(cartModel);
+    }
 
     private void updateCartUI(List<cartItems> cartModel) {
         System.out.println("CartContent children before clear: " + cartContent.getChildren().size());
@@ -250,7 +258,17 @@ public class orderCont implements Initializable {
                 AnchorPane cartItemPane = fxmlLoader.load();
 
                 addtocartcont cartController = fxmlLoader.getController();
-                cartController.setData(cartItem,cartListener);
+                cartController.setData(cartItem, cartListener);
+
+                Button removeBTN = cartController.getRemoveBTN();
+                removeBTN.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        cartModel.remove(cartItem);
+                        updateSubtotalAndTotal();
+                        updateCartUI(cartModel);
+                    }
+                });
 
                 cartOrderBTN.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
@@ -267,7 +285,6 @@ public class orderCont implements Initializable {
                                 Stage stage = new Stage();
                                 stage.setScene(new Scene(summaryPane));
                                 stage.show();
-
 
                             } catch (IOException e) {
                                 e.printStackTrace();
