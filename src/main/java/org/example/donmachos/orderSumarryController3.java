@@ -22,16 +22,16 @@ public class orderSumarryController3 {
     @FXML
     private Button proceedBTN3;
 
-    private String cod;
-    private String debit;
-    private String ewallet;
+   private String PaymentMethod;
 
     private double subtotal;
     private double total;
+    private orders order;
 
-    public void setData(double subtotal, double total,orders order) {
+    public void setData(double subtotal, double total, orders order) {
         this.subtotal = subtotal;
         this.total = total;
+        this.order = order;
 
         System.out.println("Subtotal: " + subtotal);
         System.out.println("Total: " + total);
@@ -40,13 +40,13 @@ public class orderSumarryController3 {
 
     public void orderSummary3(ActionEvent event) {
        if (event.getSource() == codBTN) {
-            cod = "Cash-On-Delivery";
+           PaymentMethod = "Cash-On-Delivery";
            System.out.println("Cash-On-Delivery");
        } else if (event.getSource() == debitCardBTN) {
-            debit = "Debit Card";
+           PaymentMethod = "Debit Card";
            System.out.println("Debit Card");
        } else if (event.getSource() == eWalletBTN) {
-            ewallet = "E-Wallet";
+           PaymentMethod = "E-Wallet";
            System.out.println("E-Wallet");
        } else if (event.getSource() == proceedBTN3) {
            try {
@@ -54,7 +54,7 @@ public class orderSumarryController3 {
                AnchorPane pane = fxmlLoader.load();
 
                orderSummaryController4 controller = fxmlLoader.getController();
-               controller.setData(subtotal, total);
+               controller.setData(subtotal, total,order);
 
                Stage stage = new Stage();
                stage.setScene(new Scene(pane));
@@ -69,15 +69,7 @@ public class orderSumarryController3 {
 
     }
 
-    public String getCod() {
-        return cod;
-    }
-
-    public String getDebit() {
-        return debit;
-    }
-
-    public String getEWallet() {
-        return ewallet;
+    public String getPaymentMethod() {
+        return PaymentMethod;
     }
 }

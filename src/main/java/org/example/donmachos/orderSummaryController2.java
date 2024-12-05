@@ -28,10 +28,12 @@ public class orderSummaryController2 {
     private Button proceedBTN2;
 
     private orders order;
+    private double subtotal;
+    private double total;
 
-    public void setOrder(orders order) {
-        this.order = order;
-        System.out.println("Received Order: " + order.toString());
+    public void setOrder(double subtotal, double total) {
+        this.subtotal = subtotal;
+        this.total = total;
 
     }
 
@@ -56,6 +58,9 @@ public class orderSummaryController2 {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering3.fxml"));
                 AnchorPane pane = fxmlLoader.load();
+
+                orderSumarryController3 controller = fxmlLoader.getController();
+                controller.setData(total,subtotal, order);
 
                 Stage stage = new Stage();
                 stage.setScene(new Scene(pane));

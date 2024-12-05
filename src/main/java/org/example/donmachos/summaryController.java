@@ -33,6 +33,7 @@ public class summaryController {
 
     private List<cartItems> cartModel;
     private cartItems cartItem;
+    private orders order;
 
     public void setData(double subtotal, double total, List<cartItems> cartModel, cartItems cartItem) {
         this.cartModel = cartModel;
@@ -53,6 +54,9 @@ public class summaryController {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordering2.fxml"));
             AnchorPane ordering2Pane = fxmlLoader.load();
+
+            orderSummaryController2 orderSummaryController2 = fxmlLoader.getController();
+            orderSummaryController2.setOrder(subtotal,total);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(ordering2Pane));

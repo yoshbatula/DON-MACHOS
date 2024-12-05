@@ -37,12 +37,20 @@ public class orderSummaryController4 {
     @FXML
     private Text totalText;
 
-    private summaryController summaryController;
+    private orderSumarryController3 orderSummary;
 
     private List<cartItems> cartItemsList;
     private cartItems cartItem;
+    private orders order;
 
-    public void setData(double subtotal, double total) {
+    public void setData(double subtotal, double total, orders order) {
+        this.order = order;
+
+        nameText.setText(order.getName());
+        addressText.setText(order.getAddress());
+        cellphoneText.setText(order.getCellphone());
+        cityText.setText(order.getCity());
+        paymentMethodText.setText(orderSummary.getPaymentMethod());
         subtotaltext.setText(String.format("₱%.2f", subtotal));
         totalText.setText(String.format("₱%.2f", total));
 

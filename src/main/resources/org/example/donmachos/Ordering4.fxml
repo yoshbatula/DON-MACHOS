@@ -6,7 +6,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -37,10 +36,7 @@
             <content>
                 <HBox prefHeight="170.0" prefWidth="983.0">
                     <children>
-                        <GridPane prefHeight="222.0" prefWidth="492.0">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            </columnConstraints>
+                        <GridPane fx:id="orderCartSummary" prefHeight="222.0" prefWidth="492.0">
                             <rowConstraints>
                                 <RowConstraints />
                                 <RowConstraints />
@@ -74,7 +70,7 @@
                 <Font name="Arial Black" size="12.0" />
             </font>
         </Text>
-        <Button fx:id="cartOrderBTN" layoutX="448.0" layoutY="648.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
+        <Button fx:id="proceedBTN4" layoutX="448.0" layoutY="648.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
             <font>
                 <Font name="Arial Bold" size="12.0" />
             </font>
@@ -124,11 +120,11 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Text layoutX="268.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="311.9999633789064" />
-      <Text layoutX="259.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="335.9999633789064" />
-      <Text layoutX="655.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.19997558593764" />
-      <Text layoutX="645.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
-      <Text layoutX="496.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
+      <Text fx:id="nameText" layoutX="268.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="311.9999633789064" />
+      <Text fx:id="cityText" layoutX="259.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="335.9999633789064" />
+      <Text fx:id="addressText" layoutX="655.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.19997558593764" />
+      <Text fx:id="cellphoneText" layoutX="645.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
+      <Text fx:id="paymentMethodText" layoutX="496.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
       <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="394.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Mask%20group.png" />
