@@ -28,6 +28,8 @@ public class summaryController {
     @FXML
     private Text totalText;
 
+    private double subtotal;
+    private double total;
 
     private List<cartItems> cartModel;
     private cartItems cartItem;
@@ -35,6 +37,11 @@ public class summaryController {
     public void setData(double subtotal, double total, List<cartItems> cartModel, cartItems cartItem) {
         this.cartModel = cartModel;
         this.cartItem = cartItem;
+        this.subtotal = subtotal;
+        this.total = total;
+
+        System.out.println("Subtotal: ₱" + subtotal);
+        System.out.println("Total: ₱" + total);
 
         subtotaltext.setText(String.format("₱%.2f", subtotal));
         totalText.setText(String.format("₱%.2f", total));
@@ -85,4 +92,12 @@ public class summaryController {
         }
     }
 
+    public Double getSubtotal() {
+        return subtotal;
+
+    }
+
+    public Double getTotal() {
+        return total;
+    }
 }

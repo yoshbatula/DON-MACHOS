@@ -8,6 +8,10 @@ public class orders {
     private String cellphone;
 
     public orders(String name, String address, String city, String cellphone) {
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.cellphone = cellphone;
     }
 
     public String getName() {
@@ -24,5 +28,10 @@ public class orders {
 
     public String getCellphone() {
         return cellphone;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{name='" + name + "', address='" + address + "', city='" + city + "', cellphone='" + cellphone + "'}";
     }
 }

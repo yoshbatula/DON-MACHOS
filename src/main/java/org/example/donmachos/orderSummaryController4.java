@@ -37,14 +37,16 @@ public class orderSummaryController4 {
     @FXML
     private Text totalText;
 
+    private summaryController summaryController;
+
     private List<cartItems> cartItemsList;
     private cartItems cartItem;
 
-    public void setData(double subtotal, double total, List<cartItems> cartItemsList, cartItems cartItem) {
-        this.cartItemsList = cartItemsList;
-        this.cartItem = cartItem;
-
+    public void setData(double subtotal, double total) {
         subtotaltext.setText(String.format("₱%.2f", subtotal));
         totalText.setText(String.format("₱%.2f", total));
+
+        System.out.println("OrderSummaryController4 - Subtotal: " + subtotal);
+        System.out.println("OrderSummaryController4 - Total: " + total);
     }
 }

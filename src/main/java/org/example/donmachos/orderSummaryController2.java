@@ -29,6 +29,12 @@ public class orderSummaryController2 {
 
     private orders order;
 
+    public void setOrder(orders order) {
+        this.order = order;
+        System.out.println("Received Order: " + order.toString());
+
+    }
+
     public void orderSummary(ActionEvent event) {
         String name = nameTF.getText();
         String address = addressTF.getText();
