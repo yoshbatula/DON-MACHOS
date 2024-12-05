@@ -60,7 +60,7 @@ public class orderSumarryController3 {
                AnchorPane pane = fxmlLoader.load();
 
                orderSummaryController4 controller = fxmlLoader.getController();
-               controller.setData(subtotal, total,order,PaymentMethod,cartModel,null);
+               controller.setData(subtotal, total, order, PaymentMethod, cartModel, null);
 
                Stage stage = new Stage();
                stage.setScene(new Scene(pane));

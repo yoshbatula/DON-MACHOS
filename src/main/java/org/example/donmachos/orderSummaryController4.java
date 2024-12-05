@@ -71,22 +71,28 @@ public class orderSummaryController4 {
         orderCartSummary.getChildren().clear();
         int row = 0;
         int column = 0;
-        for (cartItems cartItem : cartModel) {
+
+        for (cartItems item : cartModel) {
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("summaryModel.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("summaryModel.fxml"));
                 AnchorPane pane = fxmlLoader.load();
+
+
+                SummaryModelController controller = fxmlLoader.getController();
+                controller.setData(cartModel,item);
 
                 orderCartSummary.add(pane, column, row);
                 GridPane.setMargin(pane, new Insets(10));
 
-                orderCartSummary.getRowConstraints().clear();
                 if (column == 0) {
                     row++;
                 }
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
+                throw new RuntimeException("Error populating cart items in UI", e);
             }
         }
     }
+
 }
+
