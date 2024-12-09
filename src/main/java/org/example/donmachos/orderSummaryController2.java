@@ -35,6 +35,7 @@ public class orderSummaryController2 {
 
     private List<cartItems> cartModel;
     private cartItems cartItem;
+
     public void setOrder(double subtotal, double total, List<cartItems> cartModel, cartItems cartItem) {
         this.subtotal = subtotal;
         this.total = total;

@@ -45,11 +45,6 @@
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ordernowBTN" layoutX="68.0" layoutY="581.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="156.0" style="-fx-background-color: #90571C; -fx-background-radius: 5;" styleClass="btm" stylesheets="@CSS/responsive.css" text="ORDER NOW" textFill="WHITE">
-                     <font>
-                        <Font name="Arial Black" size="15.0" />
-                     </font>
-                  </Button>
                   <AnchorPane layoutX="4.0" layoutY="686.0" prefHeight="1101.0" prefWidth="1094.0">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1d6c6" height="1110.0" layoutX="2.0" layoutY="-6.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1092.0" />

@@ -50,16 +50,6 @@
                       <Font name="Arial Black" size="14.0" />
                   </font>Stage stage = new Stage();
               </Button>
-              <Button fx:id="ordersBTN" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="ORDER">
-                  <font>
-                      <Font name="Arial Black" size="14.0" />
-                  </font>
-              </Button>
-              <Button fx:id="ordersBTN1" mnemonicParsing="false" style="-fx-background-color: transparent;" styleClass="navBTN" stylesheets="@CSS/responsive.css" text="REVIEW">
-                  <font>
-                      <Font name="Arial Black" size="14.0" />
-                  </font>
-              </Button>
          </children>
       </HBox>
         <ImageView fitHeight="82.0" fitWidth="81.0" layoutX="26.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">

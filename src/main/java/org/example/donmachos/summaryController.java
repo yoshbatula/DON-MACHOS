@@ -1,5 +1,6 @@
 package org.example.donmachos;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,6 +49,10 @@ public class summaryController {
         totalText.setText(String.format("₱%.2f", total));
 
         updateOrderSummaryUI();
+    }
+
+    public void switchToMenu() {
+        Platform.exit();
     }
 
     public void switchToAnotherOrder() {
