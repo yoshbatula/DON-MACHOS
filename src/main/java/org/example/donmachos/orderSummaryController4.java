@@ -26,7 +26,7 @@ public class orderSummaryController4 {
     private Text nameText;
 
     @FXML
-    private GridPane orderCartSummary;
+    private GridPane orderCartsSumarry;
 
     @FXML
     private Text paymentMethodText;
@@ -68,7 +68,7 @@ public class orderSummaryController4 {
     }
 
     public void SummaryUpdateForUI() {
-        orderCartSummary.getChildren().clear();
+        orderCartsSumarry.getChildren().clear();
         int row = 0;
         int column = 0;
 
@@ -81,7 +81,7 @@ public class orderSummaryController4 {
                 SummaryModelController controller = fxmlLoader.getController();
                 controller.setData(cartModel,item);
 
-                orderCartSummary.add(pane, column, row);
+                orderCartsSumarry.add(pane, column, row);
                 GridPane.setMargin(pane, new Insets(10));
 
                 if (column == 0) {
