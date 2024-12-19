@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.print.PrinterJob; // Correct import
+import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -13,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 import javafx.embed.swing.SwingFXUtils;
+import javafx.stage.Stage;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -49,6 +51,9 @@ public class orderSummaryController4 {
 
     @FXML
     private Text totalText;
+
+    @FXML
+    private Button ProccedTOBTN;
 
     private orderSumarryController3 orderSummary;
 
@@ -129,6 +134,17 @@ public class orderSummaryController4 {
         }
     }
 
+    public void ProceedToThankYouPage() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Thankyou.fxml"));
+        Scene scene = new Scene(loader.load());
+        stage.setScene(scene);
+        stage.show();
+
+        Stage window = (Stage) ProccedTOBTN.getScene().getWindow();
+        window.close();
+
+    }
     public void SaveReceiptAsImage() {
         try {
             WritableImage snapshot = ReceiptLayout.snapshot(new SnapshotParameters(), null);

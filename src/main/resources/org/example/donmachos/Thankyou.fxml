@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="719.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="719.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.ThankyouController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="1082.0">
          <children>
@@ -26,7 +26,7 @@
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Label>
-            <Button layoutX="454.0" layoutY="522.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="180.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="Back to Home" textFill="WHITE">
+            <Button fx:id="BackToHomeBTN" layoutX="454.0" layoutY="522.0" mnemonicParsing="false" onAction="#BackToHome" prefHeight="43.0" prefWidth="180.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="Back to Home" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font></Button>
