@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -12,11 +13,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.orderSummaryController4">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.donmachos.orderSummaryController4">
     <children>
         <Line endX="752.0" endY="-1.9999847412109375" layoutX="263.0" layoutY="148.0" startX="-167.0" startY="-1.9999847412109375" stroke="#d7d7d7" />
         <Circle fill="#d7d7d7" layoutX="95.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
@@ -26,114 +26,171 @@
             </font>
         </Label>
         <Circle fill="#90571c" layoutX="95.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-        <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#d7d7d7" height="528.0" layoutX="37.0" layoutY="171.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1008.0" />
         <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="90.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@images/Mask%20group.png" />
             </image>
         </ImageView>
-        <ScrollPane hbarPolicy="NEVER" layoutX="67.0" layoutY="210.0" prefHeight="177.0" prefWidth="946.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
-            <content>
-                <HBox prefHeight="170.0" prefWidth="983.0">
-                    <children>
-                  <GridPane fx:id="orderCartsSumarry">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                  </GridPane>
-                        <VBox prefHeight="222.0" prefWidth="497.0" />
-                    </children>
-                </HBox>
-            </content>
-        </ScrollPane>
-        <Text layoutX="67.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal">
-            <font>
-                <Font name="Arial Black" size="12.0" />
-            </font>
-        </Text>
-        <Text fx:id="subtotaltext" layoutX="927.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="74.39999999999998">
-            <font>
-                <Font name="Arial Black" size="12.0" />
-            </font>
-        </Text>
-        <Line endX="640.5333862304688" endY="-25.20001220703125" layoutX="372.0" layoutY="444.0" startX="-304.5333251953125" startY="-25.20001220703125" />
-        <Text layoutX="68.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
-            <font>
-                <Font name="Arial Black" size="12.0" />
-            </font>
-        </Text>
-        <Text fx:id="totalText" layoutX="924.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="87.99997558593753">
-            <font>
-                <Font name="Arial Black" size="12.0" />
-            </font>
-        </Text>
-        <Button fx:id="proceedBTN4" layoutX="448.0" layoutY="648.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PROCEED" textFill="WHITE">
-            <font>
-                <Font name="Arial Bold" size="12.0" />
-            </font>
-        </Button>
-        <Label layoutX="454.0" layoutY="178.0" prefHeight="38.0" prefWidth="169.0" text="ORDER SUMMARY" textFill="#050505" wrapText="true">
-            <font>
-                <Font name="Arial Bold" size="18.0" />
-            </font>
-        </Label>
-        <Circle fill="#d7d7d7" layoutX="705.0" layoutY="148.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="29.0" layoutY="226.0" prefHeight="374.0" prefWidth="1037.0" vbarPolicy="NEVER">
+         <content>
+            <VBox prefHeight="777.0" prefWidth="975.0" spacing="5.0" style="-fx-background-color: #d7d7d7; -fx-background-radius: 30;">
+               <children>
+                    <Label prefHeight="38.0" prefWidth="169.0" text="ORDER SUMMARY" textFill="#050505" wrapText="true">
+                        <font>
+                            <Font name="Arial Bold" size="18.0" />
+                        </font>
+                    </Label>
+                    <ScrollPane hbarPolicy="NEVER" prefHeight="177.0" prefWidth="946.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                        <content>
+                            <HBox prefHeight="170.0" prefWidth="983.0">
+                                <children>
+                              <GridPane fx:id="orderCartsSumarry">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                                    <VBox prefHeight="222.0" prefWidth="497.0" />
+                                </children>
+                            </HBox>
+                        </content>
+                    </ScrollPane>
+                  <HBox prefHeight="31.0" prefWidth="879.0" spacing="850.0">
+                     <children>
+                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Subtotal">
+                              <font>
+                                  <Font name="Arial Black" size="12.0" />
+                              </font>
+                          </Text>
+                          <Text fx:id="totalText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="87.99997558593753">
+                              <font>
+                                  <Font name="Arial Black" size="12.0" />
+                              </font>
+                          </Text>
+                     </children>
+                  </HBox>
+                    <Line endX="640.5333862304688" endY="-25.20001220703125" startX="-304.5333251953125" startY="-25.20001220703125" />
+                  <HBox spacing="850.0">
+                     <children>
+                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                              <font>
+                                  <Font name="Arial Black" size="12.0" />
+                              </font>
+                          </Text>
+                          <Text fx:id="subtotaltext" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.40006103515623">
+                              <font>
+                                  <Font name="Arial Black" size="12.0" />
+                              </font>
+                          </Text>
+                     </children>
+                  </HBox>
+                  <AnchorPane fx:id="ReceiptLayout" prefHeight="444.0" prefWidth="784.0" style="-fx-background-color: WHITE;">
+                     <children>
+                        <VBox layoutX="98.0" layoutY="49.0" spacing="10.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER">
+                                 <children>
+                                    <Label prefHeight="50.0" prefWidth="392.0" text="DON MACHOS RECEIPT">
+                                       <font>
+                                          <Font name="System Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label prefHeight="50.0" prefWidth="768.0" text="------------------------------------------------------">
+                                 <font>
+                                    <Font name="System Bold" size="34.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="50.0" prefWidth="392.0" text="ORDER ID:">
+                                       <font>
+                                          <Font name="System Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="zxcmSDA12" wrappingWidth="254.6666259765625">
+                                       <font>
+                                          <Font size="35.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label prefHeight="50.0" prefWidth="392.0" text="TOTAL:">
+                                       <font>
+                                          <Font name="System Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fx:id="totalText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="254.6666259765625">
+                                       <font>
+                                          <Font size="35.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label prefWidth="392.0" text="PAYMENT METHOD:">
+                                       <font>
+                                          <Font name="System Bold" size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <Text fx:id="paymentMethodText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="370.2222534179689">
+                                       <font>
+                                          <Font size="35.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <ImageView fitHeight="95.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/Screenshot%202024-12-19%20100546.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="95.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/Screenshot%202024-12-19%20100546.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                      <Button fx:id="proceedBTN4" mnemonicParsing="false" onAction="#handleProceedButton" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="PRINT RECEIPT" textFill="WHITE">
+                                          <font>
+                                              <Font name="Arial Bold" size="12.0" />
+                                          </font>
+                                      </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Text fx:id="totalText1" layoutX="604.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="147.99997558593753">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="CENTER" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
         <Circle fill="#d7d7d7" layoutX="1006.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-        <Circle fill="#d7d7d7" layoutX="398.0" layoutY="147.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Rectangle arcHeight="50.0" arcWidth="50.0" fill="WHITE" height="160.0" layoutX="181.0" layoutY="474.0" stroke="WHITE" strokeType="INSIDE" width="750.0" />
-      <Line endX="196.19998168945312" endY="1.500030517578125" layoutX="195.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
-      <Circle fill="#90571c" layoutX="398.0" layoutY="147.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Line endX="820.5" endY="1.5000152587890625" layoutX="195.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
+      <Circle fill="#90571c" layoutX="537.0" layoutY="147.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fill="#90571c" layoutX="1006.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Circle fill="#90571c" layoutX="705.0" layoutY="148.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Line endX="201.86669921875" endY="1.500030517578125" layoutX="488.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
-      <Line endX="196.19998168945312" endY="1.500030517578125" layoutX="796.0" layoutY="145.0" startX="-89.66667175292969" startY="1.500030517578125" stroke="#90571c" />
-      <Label layoutX="470.0" layoutY="484.0" text="DELIVERY ADDRESS">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="230.0" layoutY="522.0" text="Name:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="231.0" layoutY="558.0" text="City:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="604.0" layoutY="522.0" text="Address:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="604.0" layoutY="558.0" text="Phone:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="379.0" layoutY="596.0" text="Payment Method:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
       <Text fx:id="nameText" layoutX="268.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="311.9999633789064" />
       <Text fx:id="cityText" layoutX="259.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="335.9999633789064" />
-      <Text fx:id="addressText" layoutX="655.0" layoutY="537.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="251.19997558593764" />
-      <Text fx:id="cellphoneText" layoutX="645.0" layoutY="574.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
-      <Text fx:id="paymentMethodText" layoutX="489.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.00002441406264" />
-      <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="394.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/Mask%20group.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="1002.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/Mask%20group.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="10.0" fitWidth="13.0" layoutX="701.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Mask%20group.png" />
          </image>

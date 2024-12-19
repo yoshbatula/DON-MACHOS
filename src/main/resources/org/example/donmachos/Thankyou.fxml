@@ -26,13 +26,9 @@
                   <Font name="Arial Bold" size="30.0" />
                </font>
             </Label>
-            <Button layoutX="250.0" layoutY="542.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="180.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="Back to Home" textFill="WHITE">
+            <Button layoutX="351.0" layoutY="541.0" mnemonicParsing="false" prefHeight="79.0" prefWidth="388.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="Print Receipt" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Button layoutX="686.0" layoutY="542.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="173.0" style="-fx-background-color: #90571C; -fx-background-radius: 30px;" text="Track Order" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
+                  <Font name="System Bold" size="33.0" />
                </font></Button>
          </children>
       </AnchorPane>

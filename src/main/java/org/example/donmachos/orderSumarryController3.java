@@ -29,27 +29,20 @@ public class orderSumarryController3 {
     private double subtotal;
     private double total;
     private orders order;
-    private List<cartItems> cartModel;
+
     private cartItems cartItem;
 
-    public void setData(double subtotal, double total, orders order, List<cartItems> cartModel, cartItems cartItem) {
-        this.subtotal = subtotal;
-        this.total = total;
-        this.order = order;
-        this.cartModel = cartModel;
-        this.cartItem = cartItem;
+    private List<cartItems> CartModel;
 
-        System.out.println("Subtotal: " + subtotal);
-        System.out.println("Total: " + total);
-    }
+
 
 
     public void orderSummary3(ActionEvent event) {
        if (event.getSource() == codBTN) {
-           PaymentMethod = "Cash-On-Delivery";
+           PaymentMethod = "Cash";
            System.out.println("Cash-On-Delivery");
        } else if (event.getSource() == debitCardBTN) {
-           PaymentMethod = "Debit Card";
+           PaymentMethod = "Card";
            System.out.println("Debit Card");
        } else if (event.getSource() == eWalletBTN) {
            PaymentMethod = "E-Wallet";
@@ -60,7 +53,7 @@ public class orderSumarryController3 {
                AnchorPane pane = fxmlLoader.load();
 
                orderSummaryController4 controller = fxmlLoader.getController();
-               controller.setData(subtotal, total, order, PaymentMethod, cartModel, null);
+               controller.setData(subtotal, total, order, PaymentMethod, CartModel, null);
 
                Stage stage = new Stage();
                stage.setScene(new Scene(pane));
@@ -77,5 +70,11 @@ public class orderSumarryController3 {
 
     public String getPaymentMethod() {
         return PaymentMethod;
+    }
+
+    public void setOrder(double subtotal, double total, List<cartItems> cartModel, Object o) {
+        this.CartModel = cartModel;
+        this.total = total;
+        this.subtotal = subtotal;
     }
 }

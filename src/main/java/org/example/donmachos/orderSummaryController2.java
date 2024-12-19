@@ -43,43 +43,7 @@ public class orderSummaryController2 {
         this.cartItem = cartItem;
     }
 
-    public void orderSummary(ActionEvent event) {
-        String name = nameTF.getText();
-        String address = addressTF.getText();
-        String city = cityTF.getText();
-        String cellphone = cellphoneTF.getText();
 
-        if (name.isEmpty()) {
-            nameTF.setStyle("-fx-border-color: red;");
-        } else if (address.isEmpty()) {
-            addressTF.setStyle("-fx-border-color: red;");
-        } else if (city.isEmpty()) {
-            cityTF.setStyle("-fx-border-color: red;");
-        } else if (cellphone.isEmpty()) {
-            cellphoneTF.setStyle("-fx-border-color: red;");
-        } else {
-
-            order = new orders(name, address, city, cellphone);
-
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering3.fxml"));
-                AnchorPane pane = fxmlLoader.load();
-
-                orderSumarryController3 controller = fxmlLoader.getController();
-                controller.setData(total,subtotal, order,cartModel,null);
-
-                Stage stage = new Stage();
-                stage.setScene(new Scene(pane));
-                stage.show();
-
-                Stage window = (Stage) proceedBTN2.getScene().getWindow();
-                window.close();
-
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
 }
 
 

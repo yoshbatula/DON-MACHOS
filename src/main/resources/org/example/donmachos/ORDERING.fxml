@@ -77,9 +77,8 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Circle fill="#d7d7d7" layoutX="705.0" layoutY="148.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Circle fill="#d7d7d7" layoutX="1006.0" layoutY="146.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-      <Circle fill="#d7d7d7" layoutX="398.0" layoutY="147.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Circle fill="#d7d7d7" layoutX="538.0" layoutY="145.0" radius="14.0" stroke="TRANSPARENT" strokeType="INSIDE" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="363.0" layoutY="20.0" prefHeight="38.0" prefWidth="342.0" text="ORDER" textAlignment="CENTER" textFill="#050505" wrapText="true">
          <font>
             <Font name="Arial Black" size="43.0" />

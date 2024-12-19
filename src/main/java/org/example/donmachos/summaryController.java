@@ -57,11 +57,11 @@ public class summaryController {
 
     public void switchToAnotherOrder() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ordering2.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Ordering3.fxml"));
             AnchorPane ordering2Pane = fxmlLoader.load();
 
-            orderSummaryController2 orderSummaryController2 = fxmlLoader.getController();
-            orderSummaryController2.setOrder(subtotal,total,cartModel,null);
+            orderSumarryController3 orderSummaryController3 = fxmlLoader.getController();
+            orderSummaryController3.setOrder(subtotal,total,cartModel,null);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(ordering2Pane));
