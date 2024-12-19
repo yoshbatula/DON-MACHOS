@@ -52,7 +52,8 @@ public class summaryController {
     }
 
     public void switchToMenu() {
-        Platform.exit();
+       Stage stage = (Stage) proceedBTN1.getScene().getWindow();
+       stage.close();
     }
 
     public void switchToAnotherOrder() {

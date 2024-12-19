@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.print.PrinterJob; // Correct import
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -14,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.embed.swing.SwingFXUtils;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -102,20 +104,20 @@ public class orderSummaryController4 {
 
     @FXML
     private void handleProceedButton() {
-        PrintReceipt(); // Call the print method when the button is clicked
-        SaveReceiptAsImage(); // Save the receipt layout as a JPEG
+        PrintReceipt();
+        SaveReceiptAsImage();
     }
 
     public void PrintReceipt() {
-        // Create a PrinterJob instance
+
         PrinterJob printerJob = PrinterJob.createPrinterJob();
 
         if (printerJob != null) {
-            boolean proceed = printerJob.showPrintDialog(ReceiptLayout.getScene().getWindow()); // Show print dialog
+            boolean proceed = printerJob.showPrintDialog(ReceiptLayout.getScene().getWindow());
             if (proceed) {
-                boolean success = printerJob.printPage(ReceiptLayout); // Print the AnchorPane
+                boolean success = printerJob.printPage(ReceiptLayout);
                 if (success) {
-                    printerJob.endJob(); // Complete the printing job
+                    printerJob.endJob();
                 } else {
                     System.out.println("Printing failed.");
                 }
@@ -128,11 +130,22 @@ public class orderSummaryController4 {
     }
 
     public void SaveReceiptAsImage() {
+        try {
+            WritableImage snapshot = ReceiptLayout.snapshot(new SnapshotParameters(), null);
 
-        WritableImage snapshot = ReceiptLayout.snapshot(new SnapshotParameters(), null);
-        File file = new File("Receipt.png");
-        ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", file);
+            File file = new File("receipt.png");
+
+            if (ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", file)) {
+                System.out.println("Receipt saved as an image: " + file.getAbsolutePath());
+            } else {
+                System.out.println("Failed to save the receipt as an image.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Error while saving the receipt as an image: " + e.getMessage());
+        }
     }
-
 }
+
+
 
